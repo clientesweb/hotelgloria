@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Gloria - Santa Rosa de Calamuchita</title>
+    <meta name="description" content="Hotel Gloria, tu hogar en Santa Rosa de Calamuchita. Habitaciones confortables, pileta climatizada, desayuno incluido y excelente ubicación a una cuadra del río.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav id="main-nav">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-nw6xnOD7qQH4Wg5kEU8lEv9utHAltp.png" alt="Hotel Gloria" class="logo">
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#habitaciones">Habitaciones</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <button id="menu-toggle" aria-label="Abrir menú">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Bienvenidos a Hotel Gloria</h1>
+                <p>Que lindo es sentirte como en tu casa</p>
+                <button class="cta-button">Reservar Ahora</button>
+            </div>
+        </section>
+
+        <section id="booking" class="booking-section">
+            <div class="container">
+                <h2>Reserva tu Estadía</h2>
+                <form id="booking-form">
+                    <div class="form-group">
+                        <label for="room-type">Tipo de Habitación</label>
+                        <select id="room-type" required>
+                            <option value="">Seleccionar habitación</option>
+                            <option value="superior">Habitación Superior</option>
+                            <option value="standard">Habitación Estándar</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="check-in">Check-in</label>
+                        <input type="date" id="check-in" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="check-out">Check-out</label>
+                        <input type="date" id="check-out" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Huéspedes</label>
+                        <select id="guests" required>
+                            <option value="">Número de huéspedes</option>
+                            <option value="1">1 Huésped</option>
+                            <option value="2">2 Huéspedes</option>
+                            <option value="3">3 Huéspedes</option>
+                            <option value="4">4 Huéspedes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="tu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" placeholder="+54 (XXX) XXX-XXXX" required>
+                    </div>
+                    <button type="submit" class="submit-button">Reservar Ahora</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="habitaciones" class="rooms-section">
+            <div class="container">
+                <h2>Nuestras Habitaciones</h2>
+                <div class="rooms-grid">
+                    <!-- Las habitaciones se cargarán dinámicamente con JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="about-section">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>Sobre Nosotros</h2>
+                        <p>Desde 1975, Hotel Gloria ha sido un ícono de hospitalidad en Santa Rosa de Calamuchita, brindando a nuestros huéspedes una experiencia única de confort y calidez.</p>
+                        <ul class="about-features">
+                            <li>
+                                <span class="icon">🕰️</span>
+                                <h3>50 Años de Experiencia</h3>
+                                <p>Celebramos medio siglo de dedicación a la excelencia en el servicio hotelero.</p>
+                            </li>
+                            <li>
+                                <span class="icon">⭐</span>
+                                <h3>Atención Personalizada</h3>
+                                <p>Nos enorgullecemos de ofrecer un servicio personalizado que hace que cada huésped se sienta especial.</p>
+                            </li>
+                            <li>
+                                <span class="icon">❤️</span>
+                                <h3>Pasión por el Servicio</h3>
+                                <p>Nuestro compromiso con la excelencia se refleja en cada detalle.</p>
+                            </li>
+                            <li>
+                                <span class="icon">👨‍👩‍👧‍👦</span>
+                                <h3>Tradición Familiar</h3>
+                                <p>Una empresa familiar que ha pasado de generación en generación.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sobre-nosotros.jpg-DnwRF2bu5RHCjJ8inPnvWWYAj98oE8.jpeg" alt="50 años de Hotel Gloria">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="amenities" class="amenities-section">
+            <div class="container">
+                <h2>Nuestras Instalaciones</h2>
+                <div class="amenities-grid">
+                    <!-- Las instalaciones se cargarán dinámicamente con JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="gallery-section">
+            <div class="container">
+                <h2>Galería</h2>
+                <div class="gallery-grid">
+                    <!-- Las imágenes de la galería se cargarán dinámicamente con JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="reviews-section">
+            <div class="container">
+                <h2>Lo que dicen nuestros huéspedes</h2>
+                <div class="rating-summary">
+                    <div class="rating-score">
+                        <span class="score">4.5</span>
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star half">★</span>
+                        </div>
+                        <span class="review-count">967 reseñas en Google</span>
+                    </div>
+                    <button class="view-reviews-button">Ver todas las reseñas en Google</button>
+                </div>
+                <div class="reviews-grid">
+                    <!-- Las reseñas se cargarán dinámicamente con JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2>Preguntas Frecuentes</h2>
+                <div class="faq-accordion">
+                    <!-- Las preguntas frecuentes se cargarán dinámicamente con JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact-section">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Contacto</h2>
+                        <ul>
+                            <li>
+                                <span class="icon">📞</span>
+                                <div>
+                                    <h3>Teléfono</h3>
+                                    <a href="tel:+5493546545435">+54 9 3546 54-5435</a>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="icon">✉️</span>
+                                <div>
+                                    <h3>Email</h3>
+                                    <a href="mailto:info@hotelgloria.com.ar">info@hotelgloria.com.ar</a>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="icon">📍</span>
+                                <div>
+                                    <h3>Dirección</h3>
+                                    <p>Dalmacio Velez 50, Santa Rosa de Calamuchita (5196)</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/share/1C7fKeztRn/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                <img src="facebook-icon.svg" alt="Facebook" class="social-icon">
+                            </a>
+                            <a href="https://www.instagram.com/hotelgloria.santarosa?igsh=OGR1OGgxbDA4bTc4" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <img src="instagram-icon.svg" alt="Instagram" class="social-icon">
+                            </a>
+                            <a href="https://www.hotelgloria.com.ar" target="_blank" rel="noopener noreferrer" aria-label="Sitio web">
+                                <img src="globe-icon.svg" alt="Sitio web" class="social-icon">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3396.8046419166396!2d-64.5741667!3d-31.8741667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDUyJzI3LjAiUyA2NMKwMzQnMjcuMCJX!5e0!3m2!1sen!2sar!4v1234567890!5m2!1sen!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-nw6xnOD7qQH4Wg5kEU8lEv9utHAltp.png" alt="Hotel Gloria" class="footer-logo">
+                    <p>Que lindo es sentirte como en tu casa. Un hotel con atención personalizada, ubicado en Santa Rosa de Calamuchita.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/share/1C7fKeztRn/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <img src="facebook-icon.svg" alt="Facebook" class="social-icon">
+                        </a>
+                        <a href="https://www.instagram.com/hotelgloria.santarosa?igsh=OGR1OGgxbDA4bTc4" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <img src="instagram-icon.svg" alt="Instagram" class="social-icon">
+                        </a>
+                        <a href="mailto:info@hotelgloria.com.ar" aria-label="Email">
+                            <img src="email-icon.svg" alt="Email" class="social-icon">
+                        </a>
+                        <a href="tel:+5493546545435" aria-label="Teléfono">
+                            <img src="phone-icon.svg" alt="Teléfono" class="social-icon">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#habitaciones">Habitaciones</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li>
+                            <img src="map-pin-icon.svg" alt="Dirección" class="contact-icon">
+                            <span>Dalmacio Velez 50, Santa Rosa de Calamuchita (5196)</span>
+                        </li>
+                        <li>
+                            <img src="phone-icon.svg" alt="Teléfono" class="contact-icon">
+                            <span>+54 9 3546 54-5435</span>
+                        </li>
+                        <li>
+                            <img src="email-icon.svg" alt="Email" class="contact-icon">
+                            <span>info@hotelgloria.com.ar</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hotel Gloria. Todos los derechos reservados.</p>
+                <p>
+                    Powered by 
+                    <a href="https://dualitydomain.com" target="_blank" rel="noopener noreferrer">Duality Domain</a> • 
+                    <a href="https://wa.me/5493546501537?text=Hola%20necesito%20un%20diseño%20y%20desarrollo%20web" target="_blank" rel="noopener noreferrer">Contactar desarrollador</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" id="whatsapp-button" aria-label="Contactar por WhatsApp">
+        <img src="whatsapp-icon.svg" alt="WhatsApp" class="whatsapp-icon">
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
