@@ -1,107 +1,80 @@
 "use client"
 
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [currentHash, setCurrentHash] = useState("")
+  const pathname = usePathname()
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
-  const scrollToSection = useCallback((sectionId: string) => {
-    setIsMenuOpen(false)
-    const element = document.getElementById(sectionId)
-    if (element) {
-      const offset = 80 // altura del header
-      const elementPosition = element.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.pageYOffset - offset
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      })
-
-      // Actualizar el hash en la URL sin causar scroll
-      window.history.pushState(null, "", `#${sectionId}`)
-      setCurrentHash(`#${sectionId}`)
-    }
-  }, [])
-
-  // Manejar el scroll inicial si hay un hash en la URL
+  // Cerrar el menú cuando cambia la ruta
   useEffect(() => {
-    if (window.location.hash) {
-      const id = window.location.hash.replace("#", "")
-      setTimeout(() => {
-        scrollToSection(id)
-      }, 100)
-    }
-  }, [scrollToSection])
+    setIsMenuOpen(false)
+  }, [pathname])
+
+  const isActive = (path: string) => {
+    return pathname === path
+  }
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-primary/10">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-        <button
-          onClick={() => {
-            window.scrollTo({ top: 0, behavior: "smooth" })
-            setIsMenuOpen(false)
-          }}
-          className="flex items-center justify-center"
-        >
+        <Link href="/" className="flex items-center justify-center">
           <Image
-            src="/logo.png"
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-nw6xnOD7qQH4Wg5kEU8lEv9utHAltp.png"
             alt="Hotel Gloria"
             width={180}
             height={60}
             className="h-12 w-auto"
+            priority
           />
-        </button>
+        </Link>
         <div className="hidden md:flex space-x-8 text-sm font-medium">
-          <button
-            onClick={() => scrollToSection("inicio")}
-            className={cn(
-              "text-secondary hover:text-primary transition-colors",
-              currentHash === "#inicio" && "text-primary",
-            )}
+          <Link
+            href="/"
+            className={cn("text-secondary hover:text-primary transition-colors", isActive("/") && "text-primary")}
           >
             Inicio
-          </button>
-          <button
-            onClick={() => scrollToSection("habitaciones")}
+          </Link>
+          <Link
+            href="/habitaciones"
             className={cn(
               "text-secondary hover:text-primary transition-colors",
-              currentHash === "#habitaciones" && "text-primary",
+              isActive("/habitaciones") && "text-primary",
             )}
           >
             Habitaciones
-          </button>
+          </Link>
           <Link
             href="/sobre-nosotros"
             className={cn(
               "text-secondary hover:text-primary transition-colors",
-              currentHash === "#nosotros" && "text-primary",
+              isActive("/sobre-nosotros") && "text-primary",
             )}
           >
             Nosotros
           </Link>
-          <button
-            onClick={() => scrollToSection("galeria")}
+          <Link
+            href="/galeria"
             className={cn(
               "text-secondary hover:text-primary transition-colors",
-              currentHash === "#galeria" && "text-primary",
+              isActive("/galeria") && "text-primary",
             )}
           >
             Galería
-          </button>
+          </Link>
           <Link
             href="/contacto"
             className={cn(
               "text-secondary hover:text-primary transition-colors",
-              currentHash === "#contacto" && "text-primary",
+              isActive("/contacto") && "text-primary",
             )}
           >
             Contacto
@@ -119,47 +92,47 @@ export default function Navigation() {
         )}
       >
         <div className="flex flex-col py-4">
-          <button
-            onClick={() => scrollToSection("inicio")}
+          <Link
+            href="/"
             className={cn(
               "px-6 py-3 hover:bg-primary/10 hover:text-primary transition-colors text-left",
-              currentHash === "#inicio" && "text-primary bg-primary/10",
+              isActive("/") && "text-primary bg-primary/10",
             )}
           >
             Inicio
-          </button>
-          <button
-            onClick={() => scrollToSection("habitaciones")}
+          </Link>
+          <Link
+            href="/habitaciones"
             className={cn(
               "px-6 py-3 hover:bg-primary/10 hover:text-primary transition-colors text-left",
-              currentHash === "#habitaciones" && "text-primary bg-primary/10",
+              isActive("/habitaciones") && "text-primary bg-primary/10",
             )}
           >
             Habitaciones
-          </button>
+          </Link>
           <Link
             href="/sobre-nosotros"
             className={cn(
               "px-6 py-3 hover:bg-primary/10 hover:text-primary transition-colors text-left",
-              currentHash === "#nosotros" && "text-primary bg-primary/10",
+              isActive("/sobre-nosotros") && "text-primary bg-primary/10",
             )}
           >
             Nosotros
           </Link>
-          <button
-            onClick={() => scrollToSection("galeria")}
+          <Link
+            href="/galeria"
             className={cn(
               "px-6 py-3 hover:bg-primary/10 hover:text-primary transition-colors text-left",
-              currentHash === "#galeria" && "text-primary bg-primary/10",
+              isActive("/galeria") && "text-primary bg-primary/10",
             )}
           >
             Galería
-          </button>
+          </Link>
           <Link
             href="/contacto"
             className={cn(
               "px-6 py-3 hover:bg-primary/10 hover:text-primary transition-colors text-left",
-              currentHash === "#contacto" && "text-primary bg-primary/10",
+              isActive("/contacto") && "text-primary bg-primary/10",
             )}
           >
             Contacto
