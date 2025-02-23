@@ -56,14 +56,14 @@ const rooms = [
   {
     title: "Habitación Cuádruple",
     description:
-      "Amplia habitación familiar con una cama matrimonial y dos individuales, ideal para familias o grupos.",
+      "Amplia habitación familiar con 2 ambientes, uno con cama matrimonial y otro con dos camas individuales. Ideal para familias o grupos.",
     image: "/habitacion-cuadruples.jpg",
     capacity: "4 personas",
     slug: "cuadruple",
   },
   {
     title: "Habitación Quíntuple",
-    description: "Nuestra habitación más espaciosa, perfecta para grupos grandes o familias numerosas.",
+    description: "Compuesta de dos ambientes, uno con cama matrimonial y otro con 3 camas individuales",
     image: "/habitacion-quintuples.jpg",
     capacity: "5 personas",
     slug: "quintuple",
