@@ -40,7 +40,7 @@ const reviews = [
 
 // Actualizar los datos de calificación
 const averageRating = 4.7
-const totalReviews = 745
+const totalReviews = 968
 
 // Actualizar la distribución de calificaciones
 const ratingDistribution = [
