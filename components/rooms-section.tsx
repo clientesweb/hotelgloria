@@ -33,7 +33,8 @@ const rooms = [
     title: "Habitación Individual",
     description:
       "Perfecta para viajeros solitarios, nuestras habitaciones individuales ofrecen todo lo necesario para una estadía confortable, con una cama individual y todas las comodidades esenciales.",
-    image: "/habitacion-individual.jpg",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-sala.jpg-u1RS87khEfgduWzjyX3M4lwZgkCUcX.jpeg",
     capacity: "1 persona",
     slug: "individual",
   },
@@ -41,7 +42,8 @@ const rooms = [
     title: "Habitación Doble",
     description:
       "Ideal para parejas o viajeros que buscan más espacio, cuenta con una cama matrimonial o dos camas individuales, aire acondicionado frío-calor, DirecTV y baño privado.",
-    image: "/habitacion-dobles.jpg",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-recepcion.jpg-JgrdIPUipx6TDQx8b8abCi8LxA6bWy.jpeg",
     capacity: "2 personas",
     slug: "doble",
   },
@@ -49,7 +51,8 @@ const rooms = [
     title: "Habitación Triple",
     description:
       "Espaciosa habitación con una cama matrimonial y una individual, perfecta para familias pequeñas o grupos de amigos, con todas las comodidades necesarias.",
-    image: "/habitacion-triples.jpg",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-pileta.jpg-IeZn7Fbh5BUkVyGRZlTh22bzeHg5Bk.jpeg",
     capacity: "3 personas",
     slug: "triple",
   },
@@ -57,7 +60,8 @@ const rooms = [
     title: "Habitación Cuádruple",
     description:
       "Amplia habitación familiar con una cama matrimonial y dos individuales, ideal para familias o grupos, con espacio adicional para mayor comodidad.",
-    image: "/habitacion-cuadruples.jpg",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-pileta-2.jpg-2dQNVtHOBvUzgJcU11mHgrX7YalkCb.jpeg",
     capacity: "4 personas",
     slug: "cuadruple",
   },
@@ -65,7 +69,8 @@ const rooms = [
     title: "Habitación Quíntuple",
     description:
       "Nuestra habitación más espaciosa, perfecta para grupos grandes o familias numerosas, con múltiples camas y amplio espacio para garantizar una estadía cómoda.",
-    image: "/habitacion-quintuples.jpg",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-noche.jpg-s6TmXMmqyLKO6jg4c2GAfUe265nHZO.jpeg",
     capacity: "5 personas",
     slug: "quintuple",
   },
