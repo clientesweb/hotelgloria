@@ -41,7 +41,7 @@ const rooms = [
     title: "Habitación Doble",
     description:
       "Ideal para parejas o viajeros que buscan más espacio, cuenta con una cama matrimonial o dos camas individuales, aire acondicionado frío-calor, DirecTV y baño privado.",
-    image: "/habitacion-doble.jpg",
+    image: "/habitacion-dobles.jpg",
     capacity: "2 personas",
     slug: "doble",
   },
@@ -49,7 +49,7 @@ const rooms = [
     title: "Habitación Triple",
     description:
       "Espaciosa habitación con una cama matrimonial y una individual, perfecta para familias pequeñas o grupos de amigos, con todas las comodidades necesarias.",
-    image: "/habitacion-triple.jpg",
+    image: "/habitacion-triples.jpg",
     capacity: "3 personas",
     slug: "triple",
   },
@@ -57,7 +57,7 @@ const rooms = [
     title: "Habitación Cuádruple",
     description:
       "Amplia habitación familiar con una cama matrimonial y dos individuales, ideal para familias o grupos, con espacio adicional para mayor comodidad.",
-    image: "/habitacion-cuadruple.jpg",
+    image: "/habitacion-cuadruples.jpg",
     capacity: "4 personas",
     slug: "cuadruple",
   },
@@ -65,7 +65,7 @@ const rooms = [
     title: "Habitación Quíntuple",
     description:
       "Nuestra habitación más espaciosa, perfecta para grupos grandes o familias numerosas, con múltiples camas y amplio espacio para garantizar una estadía cómoda.",
-    image: "/habitacion-quintuple.jpg",
+    image: "/habitacion-quintuples.jpg",
     capacity: "5 personas",
     slug: "quintuple",
   },
