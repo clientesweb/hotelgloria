@@ -173,20 +173,20 @@ export default function RoomPage({ params }: { params: { slug: string } }) {
               <p>{room.capacity}</p>
             </div>
           </div>
-         
-          <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Galería de Imágenes</h2>
-          <RoomGallery images={room.images} />
-        </section>
-      </main>
-      <Footer />
-    </div>
 
           <div className="bg-white p-6 rounded-lg shadow-lg border border-primary/10">
             <h2 className="text-2xl font-bold mb-6 text-center">Reserva tu Estadía</h2>
             <BookingForm initialRoomType={params.slug} />
           </div>
         </div>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-6">Galería de Imágenes</h2>
+          <RoomGallery images={room.images} />
+        </section>
+      </main>
+      <Footer />
+    </div>
   )
 }
 
