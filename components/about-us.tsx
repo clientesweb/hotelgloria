@@ -67,7 +67,7 @@ export default function AboutUs() {
           </div>
           <div className="relative h-[600px] rounded-lg overflow-hidden shadow-xl">
             <Image
-              src="/sobre-nosotros.jpgj"
+              src="/sobre-nosotros.jpg"
               alt="50 años de Hotel Gloria"
               fill
               className="object-cover"
