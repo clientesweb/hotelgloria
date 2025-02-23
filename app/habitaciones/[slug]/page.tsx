@@ -18,9 +18,9 @@ const rooms = [
     capacity: "1 persona",
     bed: "1 cama individual",
     images: [
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-sala.jpg-u1RS87khEfgduWzjyX3M4lwZgkCUcX.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-pileta.jpg-IeZn7Fbh5BUkVyGRZlTh22bzeHg5Bk.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-parque.jpg-i9zcXrKadnmzWBwKGjZ1Ph1HtnVmoj.jpeg",
     ],
   },
   {
@@ -31,9 +31,9 @@ const rooms = [
     capacity: "2 personas",
     bed: "1 cama matrimonial o 2 camas individuales",
     images: [
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-recepcion.jpg-JgrdIPUipx6TDQx8b8abCi8LxA6bWy.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-pileta-2.jpg-2dQNVtHOBvUzgJcU11mHgrX7YalkCb.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-noche.jpg-s6TmXMmqyLKO6jg4c2GAfUe265nHZO.jpeg",
     ],
   },
   {
@@ -44,9 +44,9 @@ const rooms = [
     capacity: "3 personas",
     bed: "1 cama matrimonial y 1 cama individual",
     images: [
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-sala.jpg-u1RS87khEfgduWzjyX3M4lwZgkCUcX.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-pileta.jpg-IeZn7Fbh5BUkVyGRZlTh22bzeHg5Bk.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-parque.jpg-i9zcXrKadnmzWBwKGjZ1Ph1HtnVmoj.jpeg",
     ],
   },
   {
@@ -57,9 +57,9 @@ const rooms = [
     capacity: "4 personas",
     bed: "1 cama matrimonial y 2 camas individuales",
     images: [
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-recepcion.jpg-JgrdIPUipx6TDQx8b8abCi8LxA6bWy.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-pileta-2.jpg-2dQNVtHOBvUzgJcU11mHgrX7YalkCb.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-noche.jpg-s6TmXMmqyLKO6jg4c2GAfUe265nHZO.jpeg",
     ],
   },
   {
@@ -70,9 +70,9 @@ const rooms = [
     capacity: "5 personas",
     bed: "1 cama matrimonial y 3 camas individuales",
     images: [
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-sala.jpg-u1RS87khEfgduWzjyX3M4lwZgkCUcX.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-pileta.jpg-IeZn7Fbh5BUkVyGRZlTh22bzeHg5Bk.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-parque.jpg-i9zcXrKadnmzWBwKGjZ1Ph1HtnVmoj.jpeg",
     ],
   },
 ]
@@ -128,7 +128,10 @@ export default function RoomPage({ params }: { params: { slug: string } }) {
                   <DialogTrigger asChild>
                     <div className="relative aspect-video rounded-lg overflow-hidden cursor-pointer">
                       <Image
-                        src={img || "/placeholder.svg"}
+                        src={
+                          img ||
+                          "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-sala.jpg-u1RS87khEfgduWzjyX3M4lwZgkCUcX.jpeg"
+                        }
                         alt={`${room.title} - imagen ${index + 2}`}
                         fill
                         className="object-cover"
@@ -138,7 +141,10 @@ export default function RoomPage({ params }: { params: { slug: string } }) {
                   <DialogContent className="max-w-3xl">
                     <div className="relative aspect-video">
                       <Image
-                        src={img || "/placeholder.svg"}
+                        src={
+                          img ||
+                          "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-sala.jpg-u1RS87khEfgduWzjyX3M4lwZgkCUcX.jpeg"
+                        }
                         alt={`${room.title} - imagen ${index + 2}`}
                         fill
                         className="object-contain"
