@@ -33,8 +33,7 @@ const rooms = [
     title: "Habitación Individual",
     description:
       "Perfecta para viajeros solitarios, nuestras habitaciones individuales ofrecen todo lo necesario para una estadía confortable, con una cama individual y todas las comodidades esenciales.",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-individual.jpg-jK2YkGbvhDxZMYXwT8L5NwfRxZPxSH",
+    image: "/habitacion-individual.jpg",
     capacity: "1 persona",
     slug: "individual",
   },
@@ -42,8 +41,7 @@ const rooms = [
     title: "Habitación Doble",
     description:
       "Ideal para parejas o viajeros que buscan más espacio, cuenta con una cama matrimonial o dos camas individuales, aire acondicionado frío-calor, DirecTV y baño privado.",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-doble.jpg-HvbQVZoGS2OLxpU0xiX8SpH1zEo5d7",
+    image: "/habitacion-doble.jpg",
     capacity: "2 personas",
     slug: "doble",
   },
@@ -51,8 +49,7 @@ const rooms = [
     title: "Habitación Triple",
     description:
       "Espaciosa habitación con una cama matrimonial y una individual, perfecta para familias pequeñas o grupos de amigos, con todas las comodidades necesarias.",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-triple.jpg-863TgS7vrAPdQfGccw6bVrJAbkjkxE",
+    image: "/habitacion-triple.jpg",
     capacity: "3 personas",
     slug: "triple",
   },
@@ -60,8 +57,7 @@ const rooms = [
     title: "Habitación Cuádruple",
     description:
       "Amplia habitación familiar con una cama matrimonial y dos individuales, ideal para familias o grupos, con espacio adicional para mayor comodidad.",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-cuadruple.jpg-bPZtUrodOhvFJv3kJZP96x5MYUiFI6",
+    image: "/habitacion-cuadruple.jpg",
     capacity: "4 personas",
     slug: "cuadruple",
   },
@@ -69,8 +65,7 @@ const rooms = [
     title: "Habitación Quíntuple",
     description:
       "Nuestra habitación más espaciosa, perfecta para grupos grandes o familias numerosas, con múltiples camas y amplio espacio para garantizar una estadía cómoda.",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-quintuple.jpg-DnwRF2bu5RHCjJ8inPnvWWYAj98oE8",
+    image: "/habitacion-quintuple.jpg",
     capacity: "5 personas",
     slug: "quintuple",
   },
