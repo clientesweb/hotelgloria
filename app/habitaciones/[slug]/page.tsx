@@ -1,4 +1,3 @@
-import { notFound } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { Bed, Users, Wifi, Wind, Bath, Tv, ChevronLeft, Coffee, Refrigerator } from "lucide-react"
@@ -7,7 +6,6 @@ import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import WhatsAppButton from "@/components/whatsapp-button"
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
 
 const rooms = [
   {
@@ -17,11 +15,7 @@ const rooms = [
       "Perfecta para viajeros solitarios, nuestras habitaciones individuales ofrecen todo lo necesario para una estadía confortable, con una cama individual y todas las comodidades esenciales.",
     capacity: "1 persona",
     bed: "1 cama individual",
-    images: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-sala.jpg-u1RS87khEfgduWzjyX3M4lwZgkCUcX.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-pileta.jpg-IeZn7Fbh5BUkVyGRZlTh22bzeHg5Bk.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-parque.jpg-i9zcXrKadnmzWBwKGjZ1Ph1HtnVmoj.jpeg",
-    ],
+    mainImage: "/rooms/individual.jpg",
   },
   {
     slug: "doble",
@@ -30,11 +24,7 @@ const rooms = [
       "Ideal para parejas o viajeros que buscan más espacio, cuenta con una cama matrimonial o dos camas individuales, aire acondicionado frío-calor, DirecTV y baño privado.",
     capacity: "2 personas",
     bed: "1 cama matrimonial o 2 camas individuales",
-    images: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-recepcion.jpg-JgrdIPUipx6TDQx8b8abCi8LxA6bWy.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-pileta-2.jpg-2dQNVtHOBvUzgJcU11mHgrX7YalkCb.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-noche.jpg-s6TmXMmqyLKO6jg4c2GAfUe265nHZO.jpeg",
-    ],
+    mainImage: "/rooms/doble.jpg",
   },
   {
     slug: "triple",
@@ -43,11 +33,7 @@ const rooms = [
       "Espaciosa habitación con una cama matrimonial y una individual, perfecta para familias pequeñas o grupos de amigos, con todas las comodidades necesarias.",
     capacity: "3 personas",
     bed: "1 cama matrimonial y 1 cama individual",
-    images: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-sala.jpg-u1RS87khEfgduWzjyX3M4lwZgkCUcX.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-pileta.jpg-IeZn7Fbh5BUkVyGRZlTh22bzeHg5Bk.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-parque.jpg-i9zcXrKadnmzWBwKGjZ1Ph1HtnVmoj.jpeg",
-    ],
+    mainImage: "/rooms/triple.jpg",
   },
   {
     slug: "cuadruple",
@@ -56,11 +42,7 @@ const rooms = [
       "Amplia habitación familiar con una cama matrimonial y dos individuales, ideal para familias o grupos, con espacio adicional para mayor comodidad.",
     capacity: "4 personas",
     bed: "1 cama matrimonial y 2 camas individuales",
-    images: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-recepcion.jpg-JgrdIPUipx6TDQx8b8abCi8LxA6bWy.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-pileta-2.jpg-2dQNVtHOBvUzgJcU11mHgrX7YalkCb.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-noche.jpg-s6TmXMmqyLKO6jg4c2GAfUe265nHZO.jpeg",
-    ],
+    mainImage: "/rooms/cuadruple.jpg",
   },
   {
     slug: "quintuple",
@@ -69,11 +51,7 @@ const rooms = [
       "Nuestra habitación más espaciosa, perfecta para grupos grandes o familias numerosas, con múltiples camas y amplio espacio para garantizar una estadía cómoda.",
     capacity: "5 personas",
     bed: "1 cama matrimonial y 3 camas individuales",
-    images: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-sala.jpg-u1RS87khEfgduWzjyX3M4lwZgkCUcX.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-pileta.jpg-IeZn7Fbh5BUkVyGRZlTh22bzeHg5Bk.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-parque.jpg-i9zcXrKadnmzWBwKGjZ1Ph1HtnVmoj.jpeg",
-    ],
+    mainImage: "/rooms/quintuple.jpg",
   },
 ]
 
@@ -92,7 +70,7 @@ export default function RoomPage({ params }: { params: { slug: string } }) {
   const room = rooms.find((r) => r.slug === params.slug)
 
   if (!room) {
-    notFound()
+    return <div>Habitación no encontrada</div>
   }
 
   return (
@@ -100,59 +78,18 @@ export default function RoomPage({ params }: { params: { slug: string } }) {
       <Navigation />
       <main className="flex-grow container mx-auto px-4 py-8">
         <div className="mb-6">
-          <Link href="/habitaciones" passHref>
+          <Link href="/" passHref>
             <Button variant="ghost" className="pl-0">
               <ChevronLeft className="mr-2 h-4 w-4" />
-              Volver a Habitaciones
+              Volver a Inicio
             </Button>
           </Link>
         </div>
         <h1 className="text-4xl font-bold mb-6">{room.title}</h1>
         <div className="grid md:grid-cols-2 gap-8">
           <div>
-            <Dialog>
-              <DialogTrigger asChild>
-                <div className="relative aspect-video mb-4 rounded-lg overflow-hidden cursor-pointer">
-                  <Image src={room.images[0] || "/placeholder.svg"} alt={room.title} fill className="object-cover" />
-                </div>
-              </DialogTrigger>
-              <DialogContent className="max-w-3xl">
-                <div className="relative aspect-video">
-                  <Image src={room.images[0] || "/placeholder.svg"} alt={room.title} fill className="object-contain" />
-                </div>
-              </DialogContent>
-            </Dialog>
-            <div className="grid grid-cols-2 gap-4">
-              {room.images.slice(1).map((img, index) => (
-                <Dialog key={index}>
-                  <DialogTrigger asChild>
-                    <div className="relative aspect-video rounded-lg overflow-hidden cursor-pointer">
-                      <Image
-                        src={
-                          img ||
-                          "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-sala.jpg-u1RS87khEfgduWzjyX3M4lwZgkCUcX.jpeg"
-                        }
-                        alt={`${room.title} - imagen ${index + 2}`}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-3xl">
-                    <div className="relative aspect-video">
-                      <Image
-                        src={
-                          img ||
-                          "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-sala.jpg-u1RS87khEfgduWzjyX3M4lwZgkCUcX.jpeg"
-                        }
-                        alt={`${room.title} - imagen ${index + 2}`}
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                  </DialogContent>
-                </Dialog>
-              ))}
+            <div className="relative aspect-video mb-4 rounded-lg overflow-hidden">
+              <Image src={room.mainImage || "/placeholder.svg"} alt={room.title} fill className="object-cover" />
             </div>
           </div>
           <div>
