@@ -28,7 +28,7 @@ const reviews = [
     images: [],
   },
   {
-    name: Ricardo Alfredo Trivellin",
+    name: "Ricardo Alfredo Trivellin",
     avatar: "avatar-3.png",
     rating: 5,
     date: "hace 2 meses",
