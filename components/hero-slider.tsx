@@ -7,15 +7,15 @@ import Link from "next/link"
 
 const slides = [
   {
-    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hero-hotel-gloria-1.jpg-bPZtUrodOhvFJv3kJZP96x5MYUiFI6.jpeg",
+    url: "/hero-hotel-gloria-1.jpg",
     alt: "Fachada del Hotel Gloria",
   },
   {
-    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hero-hotel-gloria-2.jpg-HvbQVZoGS2OLxpU0xiX8SpH1zEo5d7.jpeg",
+    url: "/hero-hotel-gloria-2.jpg",
     alt: "Piscina climatizada del Hotel Gloria",
   },
   {
-    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hero-hotel-gloria-3.jpg-863TgS7vrAPdQfGccw6bVrJAbkjkxE.jpeg",
+    url: "/hero-hotel-gloria-3.jpg",
     alt: "Área de juegos del Hotel Gloria",
   },
 ]
