@@ -33,7 +33,7 @@ const rooms = [
     title: "Habitación Individual",
     description:
       "Perfecta para viajeros solitarios, nuestras habitaciones individuales ofrecen todo lo necesario para una estadía confortable.",
-    image: "/placeholder.svg",
+    image: "/habitacion-individual.jpg",
     capacity: "1 persona",
     slug: "individual",
   },
