@@ -41,7 +41,7 @@ const rooms = [
     title: "Habitación Doble",
     description:
       "Ideal para parejas o viajeros que buscan más espacio, cuenta con una cama matrimonial o dos camas individuales.",
-    image: "/placeholder.svg",
+    image: "/habitacion-dobles.jpg",
     capacity: "2 personas",
     slug: "doble",
   },
@@ -49,7 +49,7 @@ const rooms = [
     title: "Habitación Triple",
     description:
       "Espaciosa habitación con una cama matrimonial y una individual, perfecta para familias pequeñas o grupos de amigos.",
-    image: "/placeholder.svg",
+    image: "/habitacion-triples.jpg",
     capacity: "3 personas",
     slug: "triple",
   },
@@ -57,14 +57,14 @@ const rooms = [
     title: "Habitación Cuádruple",
     description:
       "Amplia habitación familiar con una cama matrimonial y dos individuales, ideal para familias o grupos.",
-    image: "/placeholder.svg",
+    image: "/habitacion-cuadruples.jpg",
     capacity: "4 personas",
     slug: "cuadruple",
   },
   {
     title: "Habitación Quíntuple",
     description: "Nuestra habitación más espaciosa, perfecta para grupos grandes o familias numerosas.",
-    image: "/placeholder.svg",
+    image: "/habitacion-quintuples.jpg",
     capacity: "5 personas",
     slug: "quintuple",
   },
