@@ -11,7 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 const reviews = [
   {
     name: "Diego Ferrero",
-    avatar: "/avantar-1.png",
+    avatar: "/avatar-1.png",
     rating: 5,
     date: "hace 2 semanas",
     comment:
