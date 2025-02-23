@@ -22,7 +22,7 @@ export const metadata: Metadata = {
       "Disfruta de una estadía confortable en Santa Rosa de Calamuchita con atención personalizada y todas las comodidades.",
     images: [
       {
-        url: "https://www.hotelgloria.ar/og-image.jpg",
+        url: "https://www.hotelgloria.com.ar/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Hotel Gloria - Santa Rosa de Calamuchita",
@@ -34,20 +34,34 @@ export const metadata: Metadata = {
     title: "Hotel Gloria - Santa Rosa de Calamuchita",
     description:
       "Disfruta de una estadía confortable en Santa Rosa de Calamuchita con atención personalizada y todas las comodidades.",
-    images: ["https://www.hotelgloria.ar/twitter-image.jpg"],
+    images: ["https://www.hotelgloria.com.ar/twitter-image.jpg"],
     creator: "@HotelGloria",
   },
   alternates: {
     canonical: "https://hotelgloria.ar",
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-icon.png",
-    other: {
-      rel: "apple-touch-icon-precomposed",
-      url: "/apple-touch-icon-precomposed.png",
-    },
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [
+      { url: "/apple-icon-57x57.png", sizes: "57x57", type: "image/png" },
+      { url: "/apple-icon-60x60.png", sizes: "60x60", type: "image/png" },
+      { url: "/apple-icon-72x72.png", sizes: "72x72", type: "image/png" },
+      { url: "/apple-icon-76x76.png", sizes: "76x76", type: "image/png" },
+      { url: "/apple-icon-114x114.png", sizes: "114x114", type: "image/png" },
+      { url: "/apple-icon-120x120.png", sizes: "120x120", type: "image/png" },
+      { url: "/apple-icon-144x144.png", sizes: "144x144", type: "image/png" },
+      { url: "/apple-icon-152x152.png", sizes: "152x152", type: "image/png" },
+      { url: "/apple-icon-180x180.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      {
+        rel: "apple-touch-icon-precomposed",
+        url: "/apple-touch-icon-precomposed.png",
+      },
+    ],
   },
 }
 
@@ -59,8 +73,8 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any" />
+        <link rel="alternate icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="msapplication-TileColor" content="#C4A661" />
