@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
 
 const slides = [
   {
@@ -30,6 +29,23 @@ export default function HeroSlider() {
 
     return () => clearInterval(timer)
   }, [])
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const offset = 80 // altura del header
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - offset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      })
+
+      // Actualizar el hash en la URL sin causar scroll
+      window.history.pushState(null, "", `#${sectionId}`)
+    }
+  }
 
   return (
     <div className="relative h-screen w-full overflow-hidden">
@@ -66,20 +82,21 @@ export default function HeroSlider() {
             Descubre el encanto de Santa Rosa de Calamuchita
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="#habitaciones">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6">
-                Explorar Habitaciones
-              </Button>
-            </Link>
-            <Link href="#contacto">
-              <Button
-                size="lg"
-                variant="outline"
-                className="bg-white/10 text-white hover:bg-white/20 text-lg px-8 py-6"
-              >
-                Contáctanos
-              </Button>
-            </Link>
+            <Button
+              size="lg"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6"
+              onClick={() => scrollToSection("habitaciones")}
+            >
+              Explorar Habitaciones
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="bg-white/10 text-white hover:bg-white/20 text-lg px-8 py-6"
+              onClick={() => scrollToSection("contacto")}
+            >
+              Contáctanos
+            </Button>
           </div>
         </div>
       </div>
