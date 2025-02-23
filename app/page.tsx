@@ -23,7 +23,7 @@ export default function Page() {
       <section className="py-12 bg-muted">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg -mt-32 relative z-10">
-            <h2 className="text-2xl font-bold mb-6 text-center">Reserva tu Estadía</h2>
+            <h2 className="text-2xl font-bold mb-6 text-center">Consultar Disponibilidad</h2>
             <BookingForm />
           </div>
         </div>
