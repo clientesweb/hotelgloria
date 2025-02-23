@@ -1,16 +1,16 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
-import { Calendar } from "@/components/ui/calendar"
+import { format } from "date-fns"
+import { CalendarIcon } from "lucide-react"
+
 import { Button } from "@/components/ui/button"
+import { Calendar } from "@/components/ui/calendar"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { format } from "date-fns"
-import { CalendarIcon } from "lucide-react"
 
 interface BookingFormProps {
   initialRoomType?: string
@@ -46,7 +46,7 @@ export default function BookingForm({ initialRoomType }: BookingFormProps) {
       Teléfono: ${phone}
     `
 
-    const whatsappNumber = "5493546545435" // Actualiza este número según sea necesario
+    const whatsappNumber = "5493546545435"
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, "_blank")
   }
