@@ -39,7 +39,7 @@ export default function Footer() {
                 <Facebook className="h-6 w-6" />
               </a>
               <a
-                href="mailto:info@hotelgloria.com.ar"
+                href="mailto:info@hotelgloria.ar"
                 className="text-gray-300 hover:text-primary transition-colors"
                 aria-label="Envíanos un email"
               >
@@ -99,8 +99,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-5 w-5 text-primary" />
-                <a href="mailto:info@hotelgloria.com.ar" className="hover:text-primary transition-colors">
-                  info@hotelgloria.com.ar
+                <a href="mailto:info@hotelgloria.ar" className="hover:text-primary transition-colors">
+                  info@hotelgloria.ar
                 </a>
               </li>
             </ul>
