@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ChevronRight } from "lucide-react"
 import RoomFeatures from "./room-features"
+import Link from "next/link"
 import type { LucideIcon } from "lucide-react"
 
 interface RoomCardProps {
@@ -18,10 +19,6 @@ interface RoomCardProps {
 }
 
 export default function RoomCard({ title, description, image, capacity, features, slug }: RoomCardProps) {
-  const handleViewDetails = () => {
-    window.location.href = `https://hotelgloria.ar/habitaciones/${slug}`
-  }
-
   return (
     <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg border-primary/10">
       <div className="relative h-[300px] overflow-hidden">
@@ -49,10 +46,12 @@ export default function RoomCard({ title, description, image, capacity, features
             <p className="text-sm text-muted-foreground">Capacidad máxima</p>
             <p className="font-semibold">{capacity}</p>
           </div>
-          <Button className="bg-primary text-primary-foreground hover:bg-primary/90" onClick={handleViewDetails}>
-            Ver Detalles
-            <ChevronRight className="ml-2 h-4 w-4" />
-          </Button>
+          <Link href={`/habitaciones/${slug}`}>
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+              Ver Detalles
+              <ChevronRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
         </div>
       </CardContent>
     </Card>
