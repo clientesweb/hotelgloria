@@ -25,7 +25,8 @@ export default function RoomCard({ title, description, image, capacity, features
         <Image
           src={image || "/placeholder.svg"}
           alt={title}
-          fill
+          width={600}
+          height={400}
           className="object-cover transition-transform duration-700 hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -45,7 +46,7 @@ export default function RoomCard({ title, description, image, capacity, features
             <p className="text-sm text-muted-foreground">Capacidad máxima</p>
             <p className="font-semibold">{capacity}</p>
           </div>
-          <Link href={`/habitaciones/${slug}`} passHref>
+          <Link href={`/habitaciones/${slug}`}>
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
               Ver Detalles
               <ChevronRight className="ml-2 h-4 w-4" />
