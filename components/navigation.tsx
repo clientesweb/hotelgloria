@@ -1,45 +1,110 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useCallback } from "react"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import Link from "next/link"
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [currentHash, setCurrentHash] = useState("")
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+
+  const scrollToSection = useCallback((sectionId: string) => {
+    setIsMenuOpen(false)
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const offset = 80 // altura del header
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - offset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      })
+
+      // Actualizar el hash en la URL sin causar scroll
+      window.history.pushState(null, "", `#${sectionId}`)
+      setCurrentHash(`#${sectionId}`)
+    }
+  }, [])
+
+  // Manejar el scroll inicial si hay un hash en la URL
+  useEffect(() => {
+    if (window.location.hash) {
+      const id = window.location.hash.replace("#", "")
+      setTimeout(() => {
+        scrollToSection(id)
+      }, 100)
+    }
+  }, [scrollToSection])
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-primary/10">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-        <Link href="/" className="flex items-center justify-center">
+        <button
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" })
+            setIsMenuOpen(false)
+          }}
+          className="flex items-center justify-center"
+        >
           <Image
-            src="/logo.png"
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-nw6xnOD7qQH4Wg5kEU8lEv9utHAltp.png"
             alt="Hotel Gloria"
             width={180}
             height={60}
             className="h-12 w-auto"
           />
-        </Link>
+        </button>
         <div className="hidden md:flex space-x-8 text-sm font-medium">
-          <Link href="/" className="text-secondary hover:text-primary transition-colors">
+          <button
+            onClick={() => scrollToSection("inicio")}
+            className={cn(
+              "text-secondary hover:text-primary transition-colors",
+              currentHash === "#inicio" && "text-primary",
+            )}
+          >
             Inicio
-          </Link>
-          <Link href="#habitaciones" className="text-secondary hover:text-primary transition-colors">
+          </button>
+          <button
+            onClick={() => scrollToSection("habitaciones")}
+            className={cn(
+              "text-secondary hover:text-primary transition-colors",
+              currentHash === "#habitaciones" && "text-primary",
+            )}
+          >
             Habitaciones
-          </Link>
-          <Link href="#nosotros" className="text-secondary hover:text-primary transition-colors">
+          </button>
+          <button
+            onClick={() => scrollToSection("nosotros")}
+            className={cn(
+              "text-secondary hover:text-primary transition-colors",
+              currentHash === "#nosotros" && "text-primary",
+            )}
+          >
             Nosotros
-          </Link>
-          <Link href="#galeria" className="text-secondary hover:text-primary transition-colors">
+          </button>
+          <button
+            onClick={() => scrollToSection("galeria")}
+            className={cn(
+              "text-secondary hover:text-primary transition-colors",
+              currentHash === "#galeria" && "text-primary",
+            )}
+          >
             Galería
-          </Link>
-          <Link href="#contacto" className="text-secondary hover:text-primary transition-colors">
+          </button>
+          <button
+            onClick={() => scrollToSection("contacto")}
+            className={cn(
+              "text-secondary hover:text-primary transition-colors",
+              currentHash === "#contacto" && "text-primary",
+            )}
+          >
             Contacto
-          </Link>
+          </button>
         </div>
         <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleMenu}>
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -53,41 +118,51 @@ export default function Navigation() {
         )}
       >
         <div className="flex flex-col py-4">
-          <Link
-            href="/"
-            className="px-6 py-3 hover:bg-primary/10 hover:text-primary transition-colors"
-            onClick={toggleMenu}
+          <button
+            onClick={() => scrollToSection("inicio")}
+            className={cn(
+              "px-6 py-3 hover:bg-primary/10 hover:text-primary transition-colors text-left",
+              currentHash === "#inicio" && "text-primary bg-primary/10",
+            )}
           >
             Inicio
-          </Link>
-          <Link
-            href="#habitaciones"
-            className="px-6 py-3 hover:bg-primary/10 hover:text-primary transition-colors"
-            onClick={toggleMenu}
+          </button>
+          <button
+            onClick={() => scrollToSection("habitaciones")}
+            className={cn(
+              "px-6 py-3 hover:bg-primary/10 hover:text-primary transition-colors text-left",
+              currentHash === "#habitaciones" && "text-primary bg-primary/10",
+            )}
           >
             Habitaciones
-          </Link>
-          <Link
-            href="#nosotros"
-            className="px-6 py-3 hover:bg-primary/10 hover:text-primary transition-colors"
-            onClick={toggleMenu}
+          </button>
+          <button
+            onClick={() => scrollToSection("nosotros")}
+            className={cn(
+              "px-6 py-3 hover:bg-primary/10 hover:text-primary transition-colors text-left",
+              currentHash === "#nosotros" && "text-primary bg-primary/10",
+            )}
           >
             Nosotros
-          </Link>
-          <Link
-            href="#galeria"
-            className="px-6 py-3 hover:bg-primary/10 hover:text-primary transition-colors"
-            onClick={toggleMenu}
+          </button>
+          <button
+            onClick={() => scrollToSection("galeria")}
+            className={cn(
+              "px-6 py-3 hover:bg-primary/10 hover:text-primary transition-colors text-left",
+              currentHash === "#galeria" && "text-primary bg-primary/10",
+            )}
           >
             Galería
-          </Link>
-          <Link
-            href="#contacto"
-            className="px-6 py-3 hover:bg-primary/10 hover:text-primary transition-colors"
-            onClick={toggleMenu}
+          </button>
+          <button
+            onClick={() => scrollToSection("contacto")}
+            className={cn(
+              "px-6 py-3 hover:bg-primary/10 hover:text-primary transition-colors text-left",
+              currentHash === "#contacto" && "text-primary bg-primary/10",
+            )}
           >
             Contacto
-          </Link>
+          </button>
         </div>
       </div>
     </nav>
