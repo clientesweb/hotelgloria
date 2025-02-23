@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     "Hotel Gloria - Que lindo es sentirte como en tu casa. Disfruta de una estadía confortable en Santa Rosa de Calamuchita con atención personalizada y todas las comodidades.",
   keywords: "hotel, Santa Rosa de Calamuchita, alojamiento, vacaciones, descanso",
   authors: [{ name: "Hotel Gloria" }],
+  metadataBase: new URL("https://hotelgloria.ar"),
   openGraph: {
     type: "website",
     locale: "es_AR",
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
       "Disfruta de una estadía confortable en Santa Rosa de Calamuchita con atención personalizada y todas las comodidades.",
     images: [
       {
-        url: "https://www.hotelgloria.ar/og-image.jpg",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Hotel Gloria - Santa Rosa de Calamuchita",
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     title: "Hotel Gloria - Santa Rosa de Calamuchita",
     description:
       "Disfruta de una estadía confortable en Santa Rosa de Calamuchita con atención personalizada y todas las comodidades.",
-    images: ["https://www.hotelgloria.ar/twitter-image.jpg"],
+    images: ["/og-image.jpg"],
     creator: "@HotelGloria",
   },
   alternates: {
