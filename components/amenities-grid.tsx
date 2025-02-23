@@ -51,8 +51,8 @@ const amenities = [
   },
   {
     icon: Refrigerator,
-    title: "Comodidades en habitación",
-    description: "Vajilla, microondas y heladera",
+    title: "Comodidades en espacio común",
+    description: "Espacio común con heladera, vajilla y microondas",
   },
   {
     icon: Tv,
