@@ -10,30 +10,30 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 // Actualizar los datos de las reseñas con reseñas reales de Google
 const reviews = [
   {
-    name: "Mariana Sosa",
-    avatar: "/placeholder.svg?height=40&width=40",
+    name: "Diego Ferrero",
+    avatar: "/avantar-1.png",
     rating: 5,
     date: "hace 2 semanas",
     comment:
-      "Excelente atención, muy buena ubicación, habitaciones cómodas y limpias. El desayuno muy rico y variado. La pileta climatizada es un plus. Muy recomendable.",
+      "El hotel es hermoso, ambiente super tranquilo. Muy buena atención, muy amables. Las habitaciones son cómodas, con todos los servicios. Cuenta con comedor y espacios comunes con todas las comodidades y cochera. El hotel está ubicado a una cuadra del río y a pocas cuadras del centro. Muy buena experiencia.",
     images: [],
   },
   {
-    name: "Marcelo Botta",
-    avatar: "/placeholder.svg?height=40&width=40",
+    name: "Laura Bringas",
+    avatar: "avatar-2.png",
     rating: 5,
     date: "hace 1 mes",
     comment:
-      "Excelente atención, muy buena ubicación, habitaciones cómodas y limpias. El desayuno muy rico y variado. La pileta climatizada es un plus. Muy recomendable.",
+      "Un lugar bellísimo para compartir en familia, solos o en pareja. Cerca del centro y del río. Muy buen personal atentos a sus huéspedes en todo momento. Un lugar digno de volver, ya que sus anfitriones te hacen sentir como en casa.",
     images: [],
   },
   {
-    name: "Mariano Fernandez",
-    avatar: "/placeholder.svg?height=40&width=40",
+    name: Ricardo Alfredo Trivellin",
+    avatar: "avatar-3.png",
     rating: 5,
     date: "hace 2 meses",
     comment:
-      "Excelente atención, muy buena ubicación. Las habitaciones son muy cómodas y limpias. El desayuno es muy rico y variado. La pileta climatizada es un plus. Muy recomendable.",
+      "Realmente es un hotel familiar atendido por sus dueños y los colaboradores son muy amables. Dignos de recomendar. La amabilidad es fuera de serie. Y he recorrido unos cuantos lugares de argentina. Y creo humildemente que este hotel debería tener mejor puntuación. Volveremos. Y gracias.",
     images: [],
   },
 ]
