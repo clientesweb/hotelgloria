@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import Link from "next/link"
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -52,7 +53,7 @@ export default function Navigation() {
           className="flex items-center justify-center"
         >
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-nw6xnOD7qQH4Wg5kEU8lEv9utHAltp.png"
+            src="/logo.png"
             alt="Hotel Gloria"
             width={180}
             height={60}
@@ -78,15 +79,15 @@ export default function Navigation() {
           >
             Habitaciones
           </button>
-          <button
-            onClick={() => scrollToSection("nosotros")}
+          <Link
+            href="/sobre-nosotros"
             className={cn(
               "text-secondary hover:text-primary transition-colors",
               currentHash === "#nosotros" && "text-primary",
             )}
           >
             Nosotros
-          </button>
+          </Link>
           <button
             onClick={() => scrollToSection("galeria")}
             className={cn(
@@ -96,15 +97,15 @@ export default function Navigation() {
           >
             Galería
           </button>
-          <button
-            onClick={() => scrollToSection("contacto")}
+          <Link
+            href="/contacto"
             className={cn(
               "text-secondary hover:text-primary transition-colors",
               currentHash === "#contacto" && "text-primary",
             )}
           >
             Contacto
-          </button>
+          </Link>
         </div>
         <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleMenu}>
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -136,15 +137,15 @@ export default function Navigation() {
           >
             Habitaciones
           </button>
-          <button
-            onClick={() => scrollToSection("nosotros")}
+          <Link
+            href="/sobre-nosotros"
             className={cn(
               "px-6 py-3 hover:bg-primary/10 hover:text-primary transition-colors text-left",
               currentHash === "#nosotros" && "text-primary bg-primary/10",
             )}
           >
             Nosotros
-          </button>
+          </Link>
           <button
             onClick={() => scrollToSection("galeria")}
             className={cn(
@@ -154,15 +155,15 @@ export default function Navigation() {
           >
             Galería
           </button>
-          <button
-            onClick={() => scrollToSection("contacto")}
+          <Link
+            href="/contacto"
             className={cn(
               "px-6 py-3 hover:bg-primary/10 hover:text-primary transition-colors text-left",
               currentHash === "#contacto" && "text-primary bg-primary/10",
             )}
           >
             Contacto
-          </button>
+          </Link>
         </div>
       </div>
     </nav>
