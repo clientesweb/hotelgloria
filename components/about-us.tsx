@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { History, Star, Heart, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export default function AboutUs() {
   return (
@@ -63,11 +64,15 @@ export default function AboutUs() {
                 </div>
               </div>
             </div>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90">Conoce Nuestra Historia</Button>
+            <Link href="/sobre-nosotros">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+                Conoce Nuestra Historia
+              </Button>
+            </Link>
           </div>
           <div className="relative h-[600px] rounded-lg overflow-hidden shadow-xl">
             <Image
-              src="/sobre-nosotros.jpg"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sobre-nosotros.jpg-DnwRF2bu5RHCjJ8inPnvWWYAj98oE8.jpeg"
               alt="50 años de Hotel Gloria"
               fill
               className="object-cover"
