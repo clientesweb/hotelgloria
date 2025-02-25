@@ -8,6 +8,26 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const images = [
   {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/patio-interno.jpg-uC7cULOnJ15w6lb4ucWvHp4MYJVhLU.jpeg",
+    alt: "Patio interno con vegetación y mobiliario",
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pileta-vista-aerea.jpg-8HdvfKL0ZFErK32JYMfEmW158OFhcr.jpeg",
+    alt: "Vista aérea de la piscina climatizada",
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sillones-recepcion.jpg-4FPiVAMkEcx4BsX6vpHhJTWsyKJCFO.jpeg",
+    alt: "Área de recepción con sillones confortables",
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/estacionamiento.jpg-74LGbF5nK0ivIhIkug607hvKLvx5HT.jpeg",
+    alt: "Estacionamiento cubierto y seguro",
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/estacionamiento-exterior.jpg-WMw4FvAZRBrSw86AizqCCauvJhD778.jpeg",
+    alt: "Estacionamiento exterior con áreas verdes",
+  },
+  {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-sala.jpg-u1RS87khEfgduWzjyX3M4lwZgkCUcX.jpeg",
     alt: "Sala de estar con vista al jardín",
   },
@@ -22,14 +42,6 @@ const images = [
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-recepcion.jpg-JgrdIPUipx6TDQx8b8abCi8LxA6bWy.jpeg",
     alt: "Recepción del hotel",
-  },
-  {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-pileta-2.jpg-2dQNVtHOBvUzgJcU11mHgrX7YalkCb.jpeg",
-    alt: "Vista de la piscina a través de la vegetación",
-  },
-  {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-noche.jpg-s6TmXMmqyLKO6jg4c2GAfUe265nHZO.jpeg",
-    alt: "Vista nocturna del Hotel Gloria",
   },
 ]
 
@@ -57,7 +69,7 @@ export default function GalleryGrid() {
               className="object-cover transition-transform duration-300 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <span className="text-white text-lg font-semibold">{image.alt}</span>
+              <span className="text-white text-lg font-semibold px-4 text-center">{image.alt}</span>
             </div>
           </div>
         ))}
@@ -77,7 +89,10 @@ export default function GalleryGrid() {
                 variant="ghost"
                 size="icon"
                 className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/20 text-white hover:bg-black/40"
-                onClick={prevImage}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  prevImage()
+                }}
               >
                 <ChevronLeft className="h-8 w-8" />
               </Button>
@@ -85,7 +100,10 @@ export default function GalleryGrid() {
                 variant="ghost"
                 size="icon"
                 className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/20 text-white hover:bg-black/40"
-                onClick={nextImage}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  nextImage()
+                }}
               >
                 <ChevronRight className="h-8 w-8" />
               </Button>
