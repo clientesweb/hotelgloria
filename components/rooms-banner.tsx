@@ -2,16 +2,6 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 export default function RoomsBanner() {
-  const handleWhatsAppClick = (type: "reserva" | "disponibilidad") => {
-    const phoneNumber = "5493546545435"
-    const message =
-      type === "reserva"
-        ? "Hola! Me gustaría hacer una reserva en Hotel Gloria."
-        : "Hola! Me gustaría consultar la disponibilidad de habitaciones en Hotel Gloria."
-
-    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank")
-  }
-
   return (
     <div className="relative h-[80vh] min-h-[600px] w-full overflow-hidden">
       <Image
@@ -37,18 +27,13 @@ export default function RoomsBanner() {
               combina comodidad, elegancia y todos los servicios que necesitas.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button
-                size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-lg"
-                onClick={() => handleWhatsAppClick("reserva")}
-              >
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-lg">
                 Reservar Ahora
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="border-white/20 bg-white/10 text-white hover:bg-white/20 px-8 py-6 text-lg"
-                onClick={() => handleWhatsAppClick("disponibilidad")}
               >
                 Ver Disponibilidad
               </Button>
@@ -61,4 +46,3 @@ export default function RoomsBanner() {
     </div>
   )
 }
-
