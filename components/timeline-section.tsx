@@ -4,7 +4,7 @@ export default function TimelineSection() {
       year: "1975",
       title: "Fundación del Hotel Gloria",
       description:
-        "La familia Pérez inicia este sueño con la visión de crear un espacio acogedor para los visitantes de Santa Rosa de Calamuchita.",
+        "La familia Fornero inicia este sueño con la visión de crear un espacio acogedor para los visitantes de Santa Rosa de Calamuchita.",
     },
     {
       year: "1985",
