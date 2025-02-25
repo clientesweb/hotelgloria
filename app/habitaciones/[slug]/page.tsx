@@ -14,21 +14,25 @@ const rooms = {
     capacity: "1 persona",
     images: [
       {
-        src: "/placeholder.svg",
-        alt: "Vista principal de la habitación individual",
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-individual-cama.jpg-uumSPZjVTuzdv2FNPl0sZNrg5B5eEq.jpeg",
+        alt: "Habitación individual con cama confortable y decoración cálida",
       },
       {
-        src: "/placeholder.svg",
-        alt: "Baño de la habitación individual",
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-indiviual-espacio.jpg-wzCI5Q0HwXKH6FnLbwFCAjpljb61QU.jpeg",
+        alt: "Vista del espacio con TV y aire acondicionado",
       },
       {
-        src: "/placeholder.svg",
-        alt: "Área de trabajo de la habitación individual",
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-individual-ba%C3%B1o.jpg-toCeYiPySzrR6FGtSDDOllm5gKxbvP.jpeg",
+        alt: "Baño privado completo con amenities",
       },
-      {
-        src: "/placeholder.svg",
-        alt: "Vista del closet de la habitación individual",
-      },
+    ],
+    amenities: [
+      { icon: Wind, label: "Aire Acondicionado" },
+      { icon: Bath, label: "Baño Privado" },
+      { icon: Tv, label: "DirecTV" },
+      { icon: Wifi, label: "WiFi" },
+      { icon: Bed, label: "Ropa de Cama" },
+      { icon: Users, label: "Servicio Diario" },
     ],
   },
   doble: {
@@ -38,21 +42,25 @@ const rooms = {
     capacity: "2 personas",
     images: [
       {
-        src: "/placeholder.svg",
-        alt: "Vista principal de la habitación doble",
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-doble-cama.jpg-gvVORyycpYnIRrPeuc1bIzyLgqbvdY.jpeg",
+        alt: "Habitación doble con balcón y vista al jardín",
       },
       {
-        src: "/placeholder.svg",
-        alt: "Baño de la habitación doble",
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-doble-espacio.jpg-orxmlVP0NRtQ2QHp0G4jJkxpRBe9Z2.jpeg",
+        alt: "Vista del espacio y comodidades de la habitación",
       },
       {
-        src: "/placeholder.svg",
-        alt: "Área de estar de la habitación doble",
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-doble-ba%C3%B1o.jpg-3fLGVfEPwUK2AbmSLmZRdjDr32NNXg.jpeg",
+        alt: "Baño privado completo con amenities",
       },
-      {
-        src: "/placeholder.svg",
-        alt: "Vista del balcón de la habitación doble",
-      },
+    ],
+    amenities: [
+      { icon: Wind, label: "Aire Acondicionado" },
+      { icon: Bath, label: "Baño Privado" },
+      { icon: Tv, label: "DirecTV" },
+      { icon: Wifi, label: "WiFi" },
+      { icon: Bed, label: "Ropa de Cama" },
+      { icon: Users, label: "Servicio Diario" },
     ],
   },
   triple: {
@@ -62,21 +70,25 @@ const rooms = {
     capacity: "3 personas",
     images: [
       {
-        src: "/placeholder.svg",
-        alt: "Vista principal de la habitación triple",
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-triple-lugar.jpg-rHnZAV7YpPvuBR51Tssr9ydPC2xM2d.jpeg",
+        alt: "Habitación triple con dos camas individuales y acabados en madera",
       },
       {
-        src: "/placeholder.svg",
-        alt: "Baño de la habitación triple",
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-triple-espacio.jpg-Sbi1kR50tl9oZYiBcy7S1GExAYldIe.jpeg",
+        alt: "Vista de la habitación triple con cama matrimonial y espacio adicional",
       },
       {
-        src: "/placeholder.svg",
-        alt: "Área de estar de la habitación triple",
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-triple-camas.jpg-TsfMnSyifo1F955lZHzQKP1lSuBn4t.jpeg",
+        alt: "Configuración alternativa de habitación triple con pared verde",
       },
-      {
-        src: "/placeholder.svg",
-        alt: "Vista nocturna de la habitación triple",
-      },
+    ],
+    amenities: [
+      { icon: Wind, label: "Aire Acondicionado" },
+      { icon: Bath, label: "Baño Privado" },
+      { icon: Tv, label: "DirecTV" },
+      { icon: Wifi, label: "WiFi" },
+      { icon: Bed, label: "Ropa de Cama" },
+      { icon: Users, label: "Servicio Diario" },
     ],
   },
   cuadruple: {
@@ -86,21 +98,25 @@ const rooms = {
     capacity: "4 personas",
     images: [
       {
-        src: "/placeholder.svg",
-        alt: "Vista principal de la habitación cuádruple",
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitaciin-cuadruple-camas.jpg-T59pC60ampdPBDwbXUKlYyOkFzfSDK.jpeg",
+        alt: "Habitación cuádruple con dos camas individuales y vista al balcón",
       },
       {
-        src: "/placeholder.svg",
-        alt: "Baño de la habitación cuádruple",
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-cuadruples-espacio.jpg-XSW4YQYJQrBXC1P4fgYfwRqJdgiZB0.jpeg",
+        alt: "Vista amplia de la habitación cuádruple mostrando la distribución de camas",
       },
       {
-        src: "/placeholder.svg",
-        alt: "Área de estar de la habitación cuádruple",
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hanitacion-cuadruple-cama-matromionial.jpg-Sj1Ya8HwaCVTtcFlIRkStsRbRQAg3B.jpeg",
+        alt: "Área de cama matrimonial en la habitación cuádruple",
       },
-      {
-        src: "/placeholder.svg",
-        alt: "Vista del balcón de la habitación cuádruple",
-      },
+    ],
+    amenities: [
+      { icon: Wind, label: "Aire Acondicionado" },
+      { icon: Bath, label: "Baño Privado" },
+      { icon: Tv, label: "DirecTV" },
+      { icon: Wifi, label: "WiFi" },
+      { icon: Bed, label: "Ropa de Cama" },
+      { icon: Users, label: "Servicio Diario" },
     ],
   },
   quintuple: {
@@ -109,33 +125,28 @@ const rooms = {
     capacity: "5 personas",
     images: [
       {
-        src: "/placeholder.svg",
-        alt: "Vista principal de la habitación quíntuple",
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-quintuple-matrimonial.jpg-c6KKxPTzL1BuHrgxcgtyv8E0UjjUcE.jpeg",
+        alt: "Habitación quíntuple con cama matrimonial y techo de madera",
       },
       {
-        src: "/placeholder.svg",
-        alt: "Baño de la habitación quíntuple",
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-quintuple-espacio.jpg-kGYXT9kCA4Q8bABf2ZQkmHmGq69rs2.jpeg",
+        alt: "Vista del espacio con múltiples camas y comodidades",
       },
       {
-        src: "/placeholder.svg",
-        alt: "Área de estar de la habitación quíntuple",
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-quintuple-camas.jpg-9IbeA36YGfe34xygw6s8v9l0eVA4Wb.jpeg",
+        alt: "Área con tres camas individuales y ventana amplia",
       },
-      {
-        src: "/placeholder.svg",
-        alt: "Vista del balcón de la habitación quíntuple",
-      },
+    ],
+    amenities: [
+      { icon: Wind, label: "Aire Acondicionado" },
+      { icon: Bath, label: "Baño Privado" },
+      { icon: Tv, label: "DirecTV" },
+      { icon: Wifi, label: "WiFi" },
+      { icon: Bed, label: "Ropa de Cama" },
+      { icon: Users, label: "Servicio Diario" },
     ],
   },
 }
-
-const features = [
-  { icon: Wind, label: "Aire Acondicionado" },
-  { icon: Bath, label: "Baño Privado" },
-  { icon: Tv, label: "DirecTV" },
-  { icon: Wifi, label: "WiFi" },
-  { icon: Bed, label: "Ropa de Cama" },
-  { icon: Users, label: "Servicio Diario" },
-]
 
 export default function RoomPage({ params }: { params: { slug: string } }) {
   const room = rooms[params.slug as keyof typeof rooms]
@@ -160,7 +171,7 @@ export default function RoomPage({ params }: { params: { slug: string } }) {
             <div className="mb-6">
               <h2 className="text-2xl font-semibold mb-4">Características</h2>
               <div className="grid grid-cols-2 gap-4">
-                {features.map((feature, index) => (
+                {room.amenities?.map((feature, index) => (
                   <div key={index} className="flex items-center gap-2">
                     <feature.icon className="h-5 w-5 text-primary" />
                     <span>{feature.label}</span>
