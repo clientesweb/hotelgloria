@@ -82,6 +82,8 @@ export default function RootLayout({
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="theme-color" content="#C4A661" />
+        {/* Add this line to ensure CSS is loaded from the correct path */}
+        <link rel="stylesheet" href="/styles.css" />
       </head>
       <body className={inter.className}>
         {children}
