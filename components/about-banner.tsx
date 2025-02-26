@@ -9,6 +9,7 @@ export default function AboutBanner() {
         fill
         priority
         className="object-cover"
+        unoptimized
       />
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40" />
 
