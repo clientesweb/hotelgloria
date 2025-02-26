@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // Eliminamos la sección de redirects ya que queremos mantener ambos dominios activos
 }
 
 module.exports = nextConfig
