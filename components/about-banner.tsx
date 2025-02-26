@@ -4,7 +4,7 @@ export default function AboutBanner() {
   return (
     <div className="relative h-[60vh] min-h-[500px] w-full overflow-hidden">
       <Image
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sobre-nosotros.jpg-DnwRF2bu5RHCjJ8inPnvWWYAj98oE8.jpeg"
+        src="/sobre-nosotros.jpg"
         alt="50 años de Hotel Gloria"
         fill
         priority
