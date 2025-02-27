@@ -10,6 +10,7 @@ import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import FAQSection from "@/components/faq-section"
 import ReviewsSection from "@/components/reviews-section"
+import InstagramReels from "@/components/instagram-reels"
 
 export default function Page() {
   return (
@@ -54,6 +55,9 @@ export default function Page() {
           <GalleryGrid />
         </div>
       </section>
+
+      {/* Instagram Reels Section */}
+      <InstagramReels />
 
       {/* Reviews Section */}
       <ReviewsSection />
