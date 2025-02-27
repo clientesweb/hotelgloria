@@ -4,7 +4,7 @@ import { Facebook, Instagram, Linkedin } from "lucide-react"
 export default function TeamSection() {
   const team = [
     {
-      name: "María Pérez",
+      name: "María Fornero",
       role: "Directora General",
       image: "/placeholder.svg",
       bio: "Con más de 30 años de experiencia en la industria hotelera, María lidera nuestro equipo con pasión y dedicación.",
