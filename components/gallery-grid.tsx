@@ -43,6 +43,23 @@ const images = [
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-recepcion.jpg-JgrdIPUipx6TDQx8b8abCi8LxA6bWy.jpeg",
     alt: "Recepción del hotel",
   },
+  // Nuevas imágenes agregadas
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20250227-WA0003.jpg-nLX8Hzbo75waT5NkvpE9QzCZ54CYdY.jpeg",
+    alt: "Vista aérea del Hotel Gloria mostrando sus jardines y piscina",
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20250227-WA0004.jpg-kiYUTEXGPXGMPjC9TvuxYD1di2ghvv.jpeg",
+    alt: "Área de gazebos iluminada por la noche",
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20250227-WA0002.jpg-6TrU0A35VqxusOM2mBMsUytvYTYH7W.jpeg",
+    alt: "Vista del río de Santa Rosa de Calamuchita al atardecer",
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20250227-WA0000.jpg-ZYvNaVCNdDrosE3n0RbSs8siIV7sOS.jpeg",
+    alt: "Jardín con área de descanso bajo árboles frondosos",
+  },
 ]
 
 export default function GalleryGrid() {
@@ -67,6 +84,7 @@ export default function GalleryGrid() {
               alt={image.alt}
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-110"
+              unoptimized
             />
             <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
               <span className="text-white text-lg font-semibold px-4 text-center">{image.alt}</span>
@@ -84,6 +102,7 @@ export default function GalleryGrid() {
                 alt={images[selectedImage].alt}
                 fill
                 className="object-contain"
+                unoptimized
               />
               <Button
                 variant="ghost"
