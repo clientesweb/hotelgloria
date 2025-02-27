@@ -42,12 +42,12 @@ const rooms = {
     capacity: "2 personas",
     images: [
       {
-        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-doble-cama.jpg-gvVORyycpYnIRrPeuc1bIzyLgqbvdY.jpeg",
-        alt: "Habitación doble con balcón y vista al jardín",
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20250227-WA0006.jpg-ciahsdycEycCvkz3J8gCPnpay0UfHW.jpeg",
+        alt: "Habitación doble con dos camas individuales y decoración cálida",
       },
       {
-        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-doble-espacio.jpg-orxmlVP0NRtQ2QHp0G4jJkxpRBe9Z2.jpeg",
-        alt: "Vista del espacio y comodidades de la habitación",
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20250227-WA0005.jpg-4mUQeLuFyvcykPuyATmfknEn0glBc4.jpeg",
+        alt: "Vista al balcón desde la habitación doble",
       },
       {
         src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-doble-ba%C3%B1o.jpg-3fLGVfEPwUK2AbmSLmZRdjDr32NNXg.jpeg",
