@@ -32,7 +32,7 @@ export default function HeroSlider() {
             muted
             loop
             playsInline
-            className="h-full w-auto max-w-none object-cover"
+            className="h-full w-full object-cover md:object-contain"
             poster="/video-poster.jpg"
           >
             <source src="/hero-video.mp4" type="video/mp4" />
@@ -74,4 +74,3 @@ export default function HeroSlider() {
     </div>
   )
 }
-
