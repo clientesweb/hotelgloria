@@ -44,6 +44,57 @@ export default function TimelineSection() {
             <p className="text-right font-semibold text-primary text-xl">Familia Fornero.</p>
           </div>
         </div>
+
+        {/* Galería histórica */}
+        <div className="mt-16">
+          <h3 className="text-2xl font-bold text-center mb-8 font-gloria">Nuestra Historia en Imágenes</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="space-y-4">
+              <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20250225-WA0023.jpg-G7h0WJLWdBlla0TthOB3EQOWqtlAF9.jpeg"
+                  alt="Construcción y renovación histórica del Hotel Gloria"
+                  className="object-cover w-full h-full"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-4">
+                  <p className="text-white text-sm">Primeras etapas de construcción</p>
+                </div>
+              </div>
+              <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20250225-WA0027.jpg-HpGjePE4K115KOV2dtSZn8NY6q4YLP.jpeg"
+                  alt="Hotel Gloria en sus primeros años"
+                  className="object-cover w-full h-full"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-4">
+                  <p className="text-white text-sm">Los primeros años del hotel</p>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20250225-WA0026.jpg-5b2C7HT2hde4NKPJfqs1YIeyL3u9HD.jpeg"
+                  alt="Hotel Gloria en una etapa intermedia"
+                  className="object-cover w-full h-full"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-4">
+                  <p className="text-white text-sm">Evolución y crecimiento</p>
+                </div>
+              </div>
+              <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20250225-WA0025.jpg-26fC9gbdM8z8rknpiYE6vfALwZqM0m.jpeg"
+                  alt="Hotel Gloria en la actualidad"
+                  className="object-cover w-full h-full"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-4">
+                  <p className="text-white text-sm">El Hotel Gloria hoy</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )
