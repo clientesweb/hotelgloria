@@ -25,14 +25,14 @@ export default function HeroSlider() {
   return (
     <div className="relative h-screen w-full overflow-hidden bg-black">
       {/* Video Container */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="relative w-auto h-full max-h-screen">
+      <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+        <div className="relative w-full h-full">
           <video
             autoPlay
             muted
             loop
             playsInline
-            className="h-full w-full object-cover md:object-contain"
+            className="h-full w-full object-cover"
             poster="/video-poster.jpg"
           >
             <source src="/hero-video.mp4" type="video/mp4" />
