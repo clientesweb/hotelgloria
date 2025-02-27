@@ -23,7 +23,7 @@ export default function Page() {
       <section className="py-12 bg-muted">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg -mt-32 relative z-10">
-            <h2 className="text-2xl font-bold mb-6 text-center">Consultar Disponibilidad</h2>
+            <h2 className="text-2xl font-bold mb-6 text-center">Reserva tu Estadía</h2>
             <BookingForm />
           </div>
         </div>
@@ -72,9 +72,14 @@ export default function Page() {
                   <Phone className="h-6 w-6 text-primary" />
                   <div>
                     <h3 className="font-semibold">Teléfono</h3>
-                    <a href="tel:+5493546545435" className="text-gray-600 hover:text-primary transition-colors">
-                      +54 9 3546 54-5435
-                    </a>
+                    <div>
+                      <a href="tel:+5493546545435" className="text-gray-600 hover:text-primary transition-colors block">
+                        Celular: +54 9 3546 54-5435
+                      </a>
+                      <a href="tel:+543546420214" className="text-gray-600 hover:text-primary transition-colors block">
+                        Línea: 03546-420214
+                      </a>
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
