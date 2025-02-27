@@ -170,3 +170,20 @@ h6 {
   }
 }
 
+/* Prose styles for rich text */
+.prose {
+  @apply text-gray-600;
+}
+
+.prose p {
+  @apply mb-4 leading-relaxed;
+}
+
+.prose strong {
+  @apply font-semibold;
+}
+
+.prose a {
+  @apply text-primary hover:underline;
+}
+
