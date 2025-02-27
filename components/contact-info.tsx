@@ -12,9 +12,20 @@ export default function ContactInfo() {
             </div>
             <div>
               <h3 className="font-semibold mb-1">Teléfono</h3>
-              <a href="tel:+5493546545435" className="text-muted-foreground hover:text-primary transition-colors">
-                +54 9 3546 54-5435
-              </a>
+              <div className="space-y-1">
+                <a
+                  href="tel:+5493546545435"
+                  className="text-muted-foreground hover:text-primary transition-colors block"
+                >
+                  Celular: +54 9 3546 54-5435
+                </a>
+                <a
+                  href="tel:+543546420214"
+                  className="text-muted-foreground hover:text-primary transition-colors block"
+                >
+                  Línea: 03546-420214
+                </a>
+              </div>
             </div>
           </div>
 
