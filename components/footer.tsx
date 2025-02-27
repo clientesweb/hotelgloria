@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12">
           <div className="col-span-2">
             <Image
-              src="/logo.png"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-nw6xnOD7qQH4Wg5kEU8lEv9utHAltp.png"
               alt="Hotel Gloria"
               width={180}
               height={60}
@@ -93,9 +93,14 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-5 w-5 text-primary" />
-                <a href="tel:+5493546545435" className="hover:text-primary transition-colors">
-                  +54 9 3546 54-5435
-                </a>
+                <div>
+                  <a href="tel:+5493546545435" className="hover:text-primary transition-colors block">
+                    Celular: +54 9 3546 54-5435
+                  </a>
+                  <a href="tel:+543546420214" className="hover:text-primary transition-colors block">
+                    Línea: 03546-420214
+                  </a>
+                </div>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-5 w-5 text-primary" />
