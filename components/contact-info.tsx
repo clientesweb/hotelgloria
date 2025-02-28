@@ -36,10 +36,10 @@ export default function ContactInfo() {
             <div>
               <h3 className="font-semibold mb-1">Email</h3>
               <a
-                href="mailto:info@hotelgloria.ar"
+                href="mailto:info@hotelgloria.com.ar"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
-                info@hotelgloria.ar
+                info@hotelgloria.com.ar
               </a>
             </div>
           </div>
@@ -75,7 +75,7 @@ export default function ContactInfo() {
             </div>
             <div>
               <h3 className="font-semibold mb-1">Check-in / Check-out</h3>
-              <p className="text-muted-foreground">Check-in: 14:00 hs</p>
+              <p className="text-muted-foreground">Check-in: 13:00 hs</p>
               <p className="text-muted-foreground">Check-out: 10:00 hs</p>
             </div>
           </div>
