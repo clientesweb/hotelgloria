@@ -30,7 +30,7 @@ export default function Footer() {
                 <Instagram className="h-6 w-6" />
               </a>
               <a
-                href="https://www.facebook.com/profile.php?id=100063555629480"
+                href=https://www.facebook.com/HotelGloriaCalamuchita/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-primary transition-colors"
@@ -39,7 +39,7 @@ export default function Footer() {
                 <Facebook className="h-6 w-6" />
               </a>
               <a
-                href="mailto:info@hotelgloria.ar"
+                href="mailto:info@hotelgloria.com.ar"
                 className="text-gray-300 hover:text-primary transition-colors"
                 aria-label="Envíanos un email"
               >
@@ -104,8 +104,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-5 w-5 text-primary" />
-                <a href="mailto:info@hotelgloria.ar" className="hover:text-primary transition-colors">
-                  info@hotelgloria.ar
+                <a href="mailto:info@hotelgloria.com.ar" className="hover:text-primary transition-colors">
+                  info@hotelgloria.com.ar
                 </a>
               </li>
             </ul>
