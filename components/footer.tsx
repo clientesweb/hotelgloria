@@ -30,7 +30,7 @@ export default function Footer() {
                 <Instagram className="h-6 w-6" />
               </a>
               <a
-                href=https://www.facebook.com/HotelGloriaCalamuchita/"
+                href="https://www.facebook.com/HotelGloriaCalamuchita/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-primary transition-colors"
