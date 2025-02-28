@@ -18,7 +18,7 @@ const faqs = [
   {
     question: "¿Se permiten mascotas?",
     answer:
-      "Lamentablemente, no aceptamos mascotas en nuestras instalaciones. Sin embargo, podemos recomendarte opciones de cuidado de mascotas cercanas si lo necesitas.",
+      "Se permiten mascotas: En temporada baja aceptamos mascotas. En temporada alta (enero, febrero y fines de semana largos) lamentablemente no.",
   },
   {
     question: "¿Ofrecen servicio de traslado desde el aeropuerto?",
