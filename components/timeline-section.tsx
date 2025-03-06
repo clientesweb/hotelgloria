@@ -84,8 +84,8 @@ export default function TimelineSection() {
               </div>
               <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20250225-WA0025.jpg-26fC9gbdM8z8rknpiYE6vfALwZqM0m.jpeg"
-                  alt="Hotel Gloria en la actualidad"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hotel-gloria-actual.jpg-7fsBn1QblT8HZEk9CKC52nwipzGma8.jpeg"
+                  alt="Hotel Gloria en la actualidad - Vista nocturna de la fachada renovada"
                   className="object-cover w-full h-full"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-4">
