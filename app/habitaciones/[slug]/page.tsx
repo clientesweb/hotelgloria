@@ -81,6 +81,10 @@ const rooms = {
         src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-triple-camas.jpg-TsfMnSyifo1F955lZHzQKP1lSuBn4t.jpeg",
         alt: "Configuración alternativa de habitación triple con pared verde",
       },
+      {
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-triple-vista.jpg-8rSgNWoS4lXlK5L0ex73ISoWpC01JU.jpeg",
+        alt: "Vista desde el balcón con vistas a las montañas y jardines",
+      },
     ],
     amenities: [
       { icon: Wind, label: "Aire Acondicionado" },
