@@ -8,7 +8,7 @@ const faqs = [
   {
     question: "¿Cuál es el horario de check-in y check-out?",
     answer:
-      "El check-in es a partir de las 14:00 hs y el check-out es hasta las 10:00 hs. Si necesitas un horario diferente, contáctanos y haremos lo posible por acomodarnos a tus necesidades.",
+      "El check-in es a partir de las 13:00 hs y el check-out es hasta las 10:00 hs. Si necesitas un horario diferente, contáctanos y haremos lo posible por acomodarnos a tus necesidades.",
   },
   {
     question: "¿El hotel cuenta con estacionamiento?",
@@ -32,7 +32,14 @@ const faqs = [
   {
     question: "¿Qué opciones de pago aceptan?",
     answer:
-      "Aceptamos efectivo, tarjetas de crédito (Visa, MasterCard, American Express) y transferencias bancarias. Para reservas online, se requiere una tarjeta de crédito para garantizar la reserva.",
+      "Aceptamos efectivo, tarjetas de crédito (Visa, MasterCard, American Express) y transferencias bancarias. Para reservas online pedimos una transferencia a modo de seña por el 30% del valor de la estadía.",
+  },
+  {
+    question: "¿Cuál es la política de cancelación?",
+    answer: `- Si la reserva se cancela con más de 10 días de anticipación, se reintegra todo el dinero de la seña.
+- Si la reserva se cancela entre 5 y 10 días de anticipación, lo abonado en la seña puede ser utilizado para una reserva del futuro (dentro del mismo año). No se reintegra el dinero.
+- Si cancela con menos de 5 días de anticipación o no se presenta, no hay reintegro alguno y no se puede utilizar el dinero de la seña en un futuro.
+- Si el día que comienza su estadía, los planes cambiaron y quiere irse antes, deberá abonar las noches que se hospede más una noche de multa.`,
   },
 ]
 
