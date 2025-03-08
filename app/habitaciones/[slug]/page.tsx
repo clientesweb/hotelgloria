@@ -53,6 +53,22 @@ const rooms = {
         src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/habitacion-doble-ba%C3%B1o.jpg-3fLGVfEPwUK2AbmSLmZRdjDr32NNXg.jpeg",
         alt: "Baño privado completo con amenities",
       },
+      {
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20250308-WA0048.jpg-wOLDb8USWd6Gau7qohidoz5lAQZDOn.jpeg",
+        alt: "Habitación doble con cama individual y detalles en madera",
+      },
+      {
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20250308-WA0047.jpg-1Y6LFgYsrhoIytDUVZCraDEMtiVgKW.jpeg",
+        alt: "Habitación doble con elegante cabecera de madera y vista al exterior",
+      },
+      {
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20250308-WA0046.jpg-EL1qpR5QS6P6OWnx7aNHzVWtWfJoFc.jpeg",
+        alt: "Habitación doble con ventilador de techo y arte decorativo",
+      },
+      {
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20250308-WA0050.jpg-FGKIrSDpY4d9K91PgEr9E2sEj7RzYH.jpeg",
+        alt: "Habitación doble con acceso a balcón y cortinas blancas",
+      },
     ],
     amenities: [
       { icon: Wind, label: "Aire Acondicionado" },
