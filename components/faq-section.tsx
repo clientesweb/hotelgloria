@@ -36,10 +36,13 @@ const faqs = [
   },
   {
     question: "¿Cuál es la política de cancelación?",
-    answer: `- Si la reserva se cancela con más de 10 días de anticipación, se reintegra todo el dinero de la seña.
-- Si la reserva se cancela entre 5 y 10 días de anticipación, lo abonado en la seña puede ser utilizado para una reserva del futuro (dentro del mismo año). No se reintegra el dinero.
-- Si cancela con menos de 5 días de anticipación o no se presenta, no hay reintegro alguno y no se puede utilizar el dinero de la seña en un futuro.
-- Si el día que comienza su estadía, los planes cambiaron y quiere irse antes, deberá abonar las noches que se hospede más una noche de multa.`,
+    answer: `• Si la reserva se cancela con más de 10 días de anticipación, se reintegra todo el dinero de la seña.
+
+• Si la reserva se cancela entre 5 y 10 días de anticipación, la seña puede ser utilizada para una reserva futura (dentro del mismo año). No se reintegra el dinero.
+
+• Si cancela con menos de 5 días de anticipación o no se presenta, no hay reintegro y no se puede utilizar el dinero de la seña en un futuro.
+
+• Si el día que comienza su estadía, los planes cambiaron y quiere irse antes, deberá abonar las noches que se hospede más una noche de multa.`,
   },
 ]
 
@@ -72,10 +75,10 @@ export default function FAQSection() {
               <div
                 className={cn(
                   "px-6 overflow-hidden transition-all duration-300 ease-in-out",
-                  openIndex === index ? "max-h-96 py-4" : "max-h-0",
+                  openIndex === index ? "max-h-[500px] py-4" : "max-h-0",
                 )}
               >
-                <p className="text-gray-600">{faq.answer}</p>
+                <p className="text-gray-600 whitespace-pre-line">{faq.answer}</p>
               </div>
             </div>
           ))}
