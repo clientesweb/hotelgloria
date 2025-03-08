@@ -129,6 +129,10 @@ const rooms = {
         src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hanitacion-cuadruple-cama-matromionial.jpg-Sj1Ya8HwaCVTtcFlIRkStsRbRQAg3B.jpeg",
         alt: "Área de cama matrimonial en la habitación cuádruple",
       },
+      {
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20240117-WA0004%20-%20copia.jpg-Ne0XWQLtTyun2Fq61YjxO42WEN7Dg6.jpeg",
+        alt: "Vista desde el balcón con vistas a las montañas y jardines floridos",
+      },
     ],
     amenities: [
       { icon: Wind, label: "Aire Acondicionado" },
