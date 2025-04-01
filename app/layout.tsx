@@ -1,16 +1,28 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Syne, Inter } from "next/font/google"
 import "./globals.css"
 import WhatsAppButton from "@/components/whatsapp-button"
+import { ThemeProvider } from "@/components/theme-provider"
 
-const inter = Inter({ subsets: ["latin"] })
+// Importar fuentes modernas
+const syne = Syne({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-syne",
+})
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+})
 
 export const metadata: Metadata = {
-  title: "Hotel Gloria - Santa Rosa de Calamuchita",
+  title: "Hotel Gloria | Experiencia Premium en Santa Rosa de Calamuchita",
   description:
-    "Hotel Gloria - Que lindo es sentirte como en tu casa. Disfruta de una estadía confortable en Santa Rosa de Calamuchita con atención personalizada y todas las comodidades.",
-  keywords: "hotel, Santa Rosa de Calamuchita, alojamiento, vacaciones, descanso",
+    "Descubre una experiencia única de hospedaje en Hotel Gloria. Ubicación privilegiada, instalaciones modernas y atención personalizada en Santa Rosa de Calamuchita.",
+  keywords: "hotel boutique, Santa Rosa de Calamuchita, alojamiento premium, vacaciones, descanso, experiencia única",
   authors: [{ name: "Hotel Gloria" }],
   metadataBase: new URL("https://hotelgloria.ar"),
   openGraph: {
@@ -18,9 +30,9 @@ export const metadata: Metadata = {
     locale: "es_AR",
     url: "https://hotelgloria.ar",
     siteName: "Hotel Gloria",
-    title: "Hotel Gloria - Santa Rosa de Calamuchita",
+    title: "Hotel Gloria | Experiencia Premium en Santa Rosa de Calamuchita",
     description:
-      "Disfruta de una estadía confortable en Santa Rosa de Calamuchita con atención personalizada y todas las comodidades.",
+      "Descubre una experiencia única de hospedaje en Hotel Gloria. Ubicación privilegiada, instalaciones modernas y atención personalizada.",
     images: [
       {
         url: "/og-image.jpg",
@@ -32,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hotel Gloria - Santa Rosa de Calamuchita",
+    title: "Hotel Gloria | Experiencia Premium en Santa Rosa de Calamuchita",
     description:
-      "Disfruta de una estadía confortable en Santa Rosa de Calamuchita con atención personalizada y todas las comodidades.",
+      "Descubre una experiencia única de hospedaje en Hotel Gloria. Ubicación privilegiada, instalaciones modernas y atención personalizada.",
     images: ["/og-image.jpg"],
     creator: "@HotelGloria",
   },
@@ -46,23 +58,7 @@ export const metadata: Metadata = {
       { url: "/icon.svg", type: "image/svg+xml" },
       { url: "/favicon.ico", sizes: "any" },
     ],
-    apple: [
-      { url: "/apple-icon-57x57.png", sizes: "57x57", type: "image/png" },
-      { url: "/apple-icon-60x60.png", sizes: "60x60", type: "image/png" },
-      { url: "/apple-icon-72x72.png", sizes: "72x72", type: "image/png" },
-      { url: "/apple-icon-76x76.png", sizes: "76x76", type: "image/png" },
-      { url: "/apple-icon-114x114.png", sizes: "114x114", type: "image/png" },
-      { url: "/apple-icon-120x120.png", sizes: "120x120", type: "image/png" },
-      { url: "/apple-icon-144x144.png", sizes: "144x144", type: "image/png" },
-      { url: "/apple-icon-152x152.png", sizes: "152x152", type: "image/png" },
-      { url: "/apple-icon-180x180.png", sizes: "180x180", type: "image/png" },
-    ],
-    other: [
-      {
-        rel: "apple-touch-icon-precomposed",
-        url: "/apple-touch-icon-precomposed.png",
-      },
-    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
 }
 
@@ -72,22 +68,19 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className="scroll-smooth">
+    <html lang="es" className={`scroll-smooth ${syne.variable} ${inter.variable}`} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any" />
         <link rel="alternate icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="msapplication-TileColor" content="#C4A661" />
-        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-        <meta name="msapplication-config" content="/browserconfig.xml" />
-        <meta name="theme-color" content="#C4A661" />
-        {/* Add this line to ensure CSS is loaded from the correct path */}
-        <link rel="stylesheet" href="/styles.css" />
+        <meta name="theme-color" content="#D4AF37" />
       </head>
-      <body className={inter.className}>
-        {children}
-        <WhatsAppButton />
+      <body className="font-sans bg-background text-foreground antialiased overflow-x-hidden">
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+          {children}
+          <WhatsAppButton />
+        </ThemeProvider>
       </body>
     </html>
   )
