@@ -350,8 +350,8 @@ export default function RoomPage({ params }: { params: { slug: string } }) {
                     <Calendar className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold">Precio</h3>
-                    <p className="text-xl font-bold text-primary">{room.price}</p>
+                    <h3 className="font-semibold">Disponibilidad</h3>
+                    <p className="text-xl font-bold text-primary">Consultar</p>
                   </div>
                 </div>
               </div>
