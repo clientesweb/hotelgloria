@@ -196,7 +196,7 @@ export default function HabitacionesPage() {
                     </div>
 
                     <div className="flex items-center justify-between mt-auto">
-                      <p className="font-medium text-primary">{room.price}</p>
+                      <p className="font-medium text-primary">Consultar disponibilidad</p>
                       <Link href={`/habitaciones/${room.id}`}>
                         <Button className="rounded-full group">
                           Ver Detalles
