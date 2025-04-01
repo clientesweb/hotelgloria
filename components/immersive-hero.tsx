@@ -89,7 +89,7 @@ export default function ImmersiveHero() {
             className="mb-6 inline-block"
           >
             <span className="px-4 py-1.5 rounded-full bg-primary/20 backdrop-blur-sm text-white text-sm font-medium border border-primary/30">
-              HOTEL BOUTIQUE EN SANTA ROSA DE CALAMUCHITA
+              Bienvenidos
             </span>
           </motion.div>
 
