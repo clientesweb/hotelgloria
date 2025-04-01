@@ -141,9 +141,11 @@ export default function ModernNavigation() {
           </div>
 
           <motion.div variants={navItemVariants} custom={navItems.length} initial="hidden" animate="visible">
-            <Button variant="default" size="sm" className="rounded-full px-6 font-medium">
-              Reservar
-            </Button>
+            <Link href="#booking-section">
+              <Button variant="default" size="sm" className="rounded-full px-6 font-medium">
+                Reservar
+              </Button>
+            </Link>
           </motion.div>
 
           <motion.div variants={navItemVariants} custom={navItems.length + 1} initial="hidden" animate="visible">
@@ -231,9 +233,11 @@ export default function ModernNavigation() {
                   transition={{ delay: 0.1 * navItems.length, duration: 0.3 }}
                   className="pt-4"
                 >
-                  <Button className="w-full rounded-lg" size="lg">
-                    Reservar Ahora
-                  </Button>
+                  <Link href="#booking-section" onClick={toggleMenu}>
+                    <Button className="w-full rounded-lg" size="lg">
+                      Reservar Ahora
+                    </Button>
+                  </Link>
                 </motion.div>
               </div>
             </motion.div>
