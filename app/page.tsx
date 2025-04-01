@@ -19,7 +19,7 @@ export default function HomePage() {
       <ImmersiveHero />
 
       {/* Booking Section */}
-      <section className="py-24 bg-background relative">
+      <section id="booking-section" className="py-24 bg-background relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <motion.h2
