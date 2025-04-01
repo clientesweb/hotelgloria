@@ -18,7 +18,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        gloria: ["Times New Roman", "serif"], // Reemplazar con la fuente exacta cuando esté disponible
+        heading: ["var(--font-syne)"],
+        sans: ["var(--font-inter)"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -27,24 +28,24 @@ module.exports = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#C4A661", // Color dorado del logo
-          foreground: "#1A1A1A",
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "#1A1A1A",
-          foreground: "#ffffff",
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
-          DEFAULT: "#F5F2E8",
-          foreground: "#1A1A1A",
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "#E5DCC9",
-          foreground: "#1A1A1A",
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -60,21 +61,22 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      typography: {
-        DEFAULT: {
-          css: {
-            color: "#333",
-            a: {
-              color: "#C4A661",
-              "&:hover": {
-                color: "#A38A4D",
-              },
-            },
-          },
+      keyframes: {
+        "accordion-down": {
+          from: { height: 0 },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("tailwindcss-animate")],
 }
 
