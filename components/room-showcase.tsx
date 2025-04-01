@@ -209,7 +209,7 @@ export default function RoomShowcase() {
                     </div>
 
                     <div className="flex items-center justify-between mt-4">
-                      <p className="text-white font-medium">{rooms[activeRoom].price}</p>
+                      <p className="text-white font-medium">Consultar disponibilidad</p>
                       <Link href={`/habitaciones/${rooms[activeRoom].id}`}>
                         <Button className="rounded-full">Ver Detalles</Button>
                       </Link>
