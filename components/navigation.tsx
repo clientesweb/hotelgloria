@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { motion } from "framer-motion"
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -38,7 +39,7 @@ export default function Navigation() {
     <nav
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
-        isScrolled ? "bg-white/80 backdrop-blur-md border-b border-primary/10 h-20" : "bg-transparent h-24 text-white",
+        isScrolled ? "bg-white/95 backdrop-blur-md shadow-md h-20" : "bg-transparent h-24 text-white",
       )}
     >
       <div className="container mx-auto px-4 h-full flex items-center justify-between">
@@ -53,75 +54,42 @@ export default function Navigation() {
           />
         </Link>
         <div
-          className={cn("hidden md:flex space-x-8 text-sm font-medium", isScrolled ? "text-secondary" : "text-white")}
+          className={cn("hidden md:flex space-x-8 text-sm font-medium", isScrolled ? "text-slate-800" : "text-white")}
         >
-          <Link
-            href="/"
-            className={cn(
-              "hover:text-primary transition-colors relative py-2",
-              isActive("/") && "text-primary",
-              !isActive("/") &&
-                "after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary hover:after:w-full after:transition-all",
-            )}
-          >
-            Inicio
-          </Link>
-          <Link
-            href="/habitaciones"
-            className={cn(
-              "hover:text-primary transition-colors relative py-2",
-              isActive("/habitaciones") && "text-primary",
-              !isActive("/habitaciones") &&
-                "after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary hover:after:w-full after:transition-all",
-            )}
-          >
-            Habitaciones
-          </Link>
-          <Link
-            href="/sobre-nosotros"
-            className={cn(
-              "hover:text-primary transition-colors relative py-2",
-              isActive("/sobre-nosotros") && "text-primary",
-              !isActive("/sobre-nosotros") &&
-                "after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary hover:after:w-full after:transition-all",
-            )}
-          >
-            Nosotros
-          </Link>
-          <Link
-            href="/galeria"
-            className={cn(
-              "hover:text-primary transition-colors relative py-2",
-              isActive("/galeria") && "text-primary",
-              !isActive("/galeria") &&
-                "after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary hover:after:w-full after:transition-all",
-            )}
-          >
-            Galería
-          </Link>
-          <Link
-            href="/contacto"
-            className={cn(
-              "hover:text-primary transition-colors relative py-2",
-              isActive("/contacto") && "text-primary",
-              !isActive("/contacto") &&
-                "after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary hover:after:w-full after:transition-all",
-            )}
-          >
-            Contacto
-          </Link>
+          {[
+            { path: "/", label: "Inicio" },
+            { path: "/habitaciones", label: "Habitaciones" },
+            { path: "/sobre-nosotros", label: "Nosotros" },
+            { path: "/galeria", label: "Galería" },
+            { path: "/contacto", label: "Contacto" },
+          ].map((item) => (
+            <Link
+              key={item.path}
+              href={item.path}
+              className={cn(
+                "hover:text-primary transition-colors relative py-2",
+                isActive(item.path) && "text-primary font-semibold",
+                !isActive(item.path) &&
+                  "after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary hover:after:w-full after:transition-all",
+              )}
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
+
         <Button
           variant="ghost"
           size="icon"
           className={cn("md:hidden", !isScrolled && "text-white")}
           onClick={toggleMenu}
+          aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
         >
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </Button>
       </div>
 
-      {/* Menú móvil */}
+      {/* Menú móvil con animación */}
       <div
         className={cn(
           "fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity md:hidden",
@@ -129,60 +97,42 @@ export default function Navigation() {
         )}
         onClick={toggleMenu}
       />
-      <div
-        className={cn(
-          "fixed top-20 right-0 h-[calc(100vh-5rem)] w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out md:hidden",
-          isMenuOpen ? "translate-x-0" : "translate-x-full",
-        )}
+
+      <motion.div
+        initial={{ x: "100%" }}
+        animate={{ x: isMenuOpen ? 0 : "100%" }}
+        transition={{ type: "tween", duration: 0.3 }}
+        className="fixed top-20 right-0 h-[calc(100vh-5rem)] w-64 bg-white shadow-lg md:hidden overflow-y-auto"
       >
         <div className="flex flex-col py-4">
-          <Link
-            href="/"
-            className={cn(
-              "px-6 py-3 hover:bg-primary/10 hover:text-primary transition-colors text-left",
-              isActive("/") && "text-primary bg-primary/10",
-            )}
-          >
-            Inicio
-          </Link>
-          <Link
-            href="/habitaciones"
-            className={cn(
-              "px-6 py-3 hover:bg-primary/10 hover:text-primary transition-colors text-left",
-              isActive("/habitaciones") && "text-primary bg-primary/10",
-            )}
-          >
-            Habitaciones
-          </Link>
-          <Link
-            href="/sobre-nosotros"
-            className={cn(
-              "px-6 py-3 hover:bg-primary/10 hover:text-primary transition-colors text-left",
-              isActive("/sobre-nosotros") && "text-primary bg-primary/10",
-            )}
-          >
-            Nosotros
-          </Link>
-          <Link
-            href="/galeria"
-            className={cn(
-              "px-6 py-3 hover:bg-primary/10 hover:text-primary transition-colors text-left",
-              isActive("/galeria") && "text-primary bg-primary/10",
-            )}
-          >
-            Galería
-          </Link>
-          <Link
-            href="/contacto"
-            className={cn(
-              "px-6 py-3 hover:bg-primary/10 hover:text-primary transition-colors text-left",
-              isActive("/contacto") && "text-primary bg-primary/10",
-            )}
-          >
-            Contacto
-          </Link>
+          {[
+            { path: "/", label: "Inicio" },
+            { path: "/habitaciones", label: "Habitaciones" },
+            { path: "/sobre-nosotros", label: "Nosotros" },
+            { path: "/galeria", label: "Galería" },
+            { path: "/contacto", label: "Contacto" },
+          ].map((item) => (
+            <Link
+              key={item.path}
+              href={item.path}
+              className={cn(
+                "px-6 py-4 hover:bg-primary/10 hover:text-primary transition-colors text-left border-b border-gray-100",
+                isActive(item.path) && "text-primary bg-primary/5 font-medium",
+              )}
+            >
+              {item.label}
+            </Link>
+          ))}
+
+          <div className="mt-6 px-6">
+            <Link href="#booking-section">
+              <Button className="w-full" size="lg">
+                Reservar Ahora
+              </Button>
+            </Link>
+          </div>
         </div>
-      </div>
+      </motion.div>
     </nav>
   )
 }
