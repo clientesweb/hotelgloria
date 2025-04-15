@@ -4,6 +4,8 @@ import { useState, useEffect, useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import { Play, Pause, Volume2, VolumeX, Maximize, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useMobile } from "@/hooks/use-mobile"
+import Image from "next/image"
 
 interface VideoHotelProps {
   videoPath?: string
@@ -19,6 +21,7 @@ export default function VideoHotel({ videoPath = "/video-hotel.mp4", title, desc
   const videoRef = useRef<HTMLVideoElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: false, amount: 0.3 })
+  const isMobile = useMobile()
 
   // Manejar la carga del video
   useEffect(() => {
@@ -74,20 +77,25 @@ export default function VideoHotel({ videoPath = "/video-hotel.mp4", title, desc
   }
 
   return (
-    <section className="py-16 md:py-24 bg-background relative" id="video-hotel">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-24 bg-background relative overflow-hidden" id="video-hotel">
+      {/* Elementos de branding */}
+      <div className="absolute -top-24 -right-24 w-48 h-48 md:w-64 md:h-64 rounded-full bg-primary/10 blur-3xl"></div>
+      <div className="absolute -bottom-24 -left-24 w-48 h-48 md:w-64 md:h-64 rounded-full bg-primary/10 blur-3xl"></div>
+
+      <div className="container mx-auto px-4 relative z-10">
         {(title || description) && (
           <div className="text-center mb-10">
             {title && (
-              <motion.h2
-                className="text-3xl md:text-4xl font-bold mb-4"
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
+                className="relative inline-block"
               >
-                {title}
-              </motion.h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 relative z-10">{title}</h2>
+                <div className="absolute -bottom-2 left-0 right-0 h-3 bg-primary/20 -rotate-1 rounded-full"></div>
+              </motion.div>
             )}
             {description && (
               <motion.p
@@ -112,10 +120,23 @@ export default function VideoHotel({ videoPath = "/video-hotel.mp4", title, desc
           className="max-w-5xl mx-auto"
         >
           <div className="gradient-border bg-background p-2 sm:p-4 rounded-2xl shadow-lg overflow-hidden">
-            {isLoading && (
+            {/* Logo de marca de agua */}
+            <div className="absolute top-4 right-4 z-20 opacity-70">
+              <Image src="/logo-small.png" alt="Hotel Gloria" width={60} height={60} className="hidden md:block" />
+            </div>
+
+            {/* Indicador de carga (solo en desktop) */}
+            {isLoading && !isMobile && (
               <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-muted/20 rounded-xl">
                 <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin mb-4"></div>
                 <p className="text-muted-foreground">Cargando video...</p>
+              </div>
+            )}
+
+            {/* Indicador de carga simplificado para móvil */}
+            {isLoading && isMobile && (
+              <div className="absolute inset-0 z-10 flex items-center justify-center bg-muted/20 rounded-xl">
+                <div className="w-10 h-10 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
               </div>
             )}
 
@@ -143,7 +164,7 @@ export default function VideoHotel({ videoPath = "/video-hotel.mp4", title, desc
                 </video>
 
                 {/* Video Controls Overlay */}
-                <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-xl">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-xl">
                   <div className="flex gap-4">
                     <Button
                       size="icon"
@@ -173,6 +194,15 @@ export default function VideoHotel({ videoPath = "/video-hotel.mp4", title, desc
                 </div>
               </div>
             )}
+          </div>
+
+          {/* Elemento de branding debajo del video */}
+          <div className="flex justify-center mt-6">
+            <div className="flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full">
+              <div className="w-2 h-2 rounded-full bg-primary"></div>
+              <span className="text-sm font-medium text-primary">Hotel Gloria</span>
+              <div className="w-2 h-2 rounded-full bg-primary"></div>
+            </div>
           </div>
         </motion.div>
       </div>
