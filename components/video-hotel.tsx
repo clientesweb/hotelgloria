@@ -6,13 +6,12 @@ import { Play, Pause, Volume2, VolumeX, Maximize, AlertCircle } from "lucide-rea
 import { Button } from "@/components/ui/button"
 
 interface VideoHotelProps {
-  fileId: string
+  videoPath?: string
   title?: string
   description?: string
 }
 
-export default function VideoHotel({ fileId, title, description }: VideoHotelProps) {
-  const [videoUrl, setVideoUrl] = useState<string | null>(null)
+export default function VideoHotel({ videoPath = "/video-hotel.mp4", title, description }: VideoHotelProps) {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
@@ -21,30 +20,20 @@ export default function VideoHotel({ fileId, title, description }: VideoHotelPro
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: false, amount: 0.3 })
 
+  // Manejar la carga del video
   useEffect(() => {
-    const generateVideoUrl = () => {
-      try {
-        const baseUrl = "https://drive.google.com/uc"
-        const params = new URLSearchParams({
-          id: fileId,
-          export: "download",
-        })
-        setVideoUrl(`${baseUrl}?${params.toString()}`)
+    if (videoRef.current) {
+      videoRef.current.addEventListener("loadeddata", () => {
         setIsLoading(false)
-      } catch (err) {
-        setError("Error al generar la URL del video")
-        setIsLoading(false)
-      }
+      })
     }
+  }, [])
 
-    generateVideoUrl()
-  }, [fileId])
-
-  // Autoplay when in view
+  // Autoplay cuando está en el viewport
   useEffect(() => {
     if (isInView && videoRef.current && !isPlaying && !isLoading) {
       videoRef.current.play().catch(() => {
-        // Autoplay was prevented, we'll need user interaction
+        // Autoplay fue prevenido, necesitamos interacción del usuario
       })
     }
   }, [isInView, isLoading, isPlaying])
@@ -123,12 +112,14 @@ export default function VideoHotel({ fileId, title, description }: VideoHotelPro
           className="max-w-5xl mx-auto"
         >
           <div className="gradient-border bg-background p-2 sm:p-4 rounded-2xl shadow-lg overflow-hidden">
-            {isLoading ? (
-              <div className="relative aspect-video w-full flex flex-col items-center justify-center bg-muted/20 rounded-xl">
+            {isLoading && (
+              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-muted/20 rounded-xl">
                 <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin mb-4"></div>
                 <p className="text-muted-foreground">Cargando video...</p>
               </div>
-            ) : error ? (
+            )}
+
+            {error ? (
               <div className="relative aspect-video w-full flex flex-col items-center justify-center bg-red-50 dark:bg-red-950/20 rounded-xl p-6 text-center">
                 <AlertCircle className="h-12 w-12 text-red-500 mb-4" />
                 <p className="text-red-600 dark:text-red-400 font-medium">{error}</p>
@@ -136,7 +127,7 @@ export default function VideoHotel({ fileId, title, description }: VideoHotelPro
                   Reintentar
                 </Button>
               </div>
-            ) : videoUrl ? (
+            ) : (
               <div className="relative group">
                 <video
                   ref={videoRef}
@@ -147,7 +138,7 @@ export default function VideoHotel({ fileId, title, description }: VideoHotelPro
                   playsInline
                   preload="metadata"
                 >
-                  <source src={videoUrl} type="video/mp4" />
+                  <source src={videoPath} type="video/mp4" />
                   Tu navegador no soporta videos HTML5
                 </video>
 
@@ -181,7 +172,7 @@ export default function VideoHotel({ fileId, title, description }: VideoHotelPro
                   </div>
                 </div>
               </div>
-            ) : null}
+            )}
           </div>
         </motion.div>
       </div>
