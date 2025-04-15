@@ -21,7 +21,7 @@ export default function HomePage() {
 
       {/* Video Hotel Section */}
       <VideoHotel
-        fileId="1KdTh_4jXmWL7fu4oVTlEiuVP9U16kFU-"
+        videoPath="/video-hotel.mp4"
         title="Descubre Hotel Gloria"
         description="Un recorrido por nuestras instalaciones y los hermosos paisajes de Santa Rosa de Calamuchita"
       />
