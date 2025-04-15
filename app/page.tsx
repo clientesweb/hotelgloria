@@ -1,5 +1,6 @@
 "use client"
 
+// Importar el nuevo componente de video de Instagram
 import ModernNavigation from "@/components/modern-navigation"
 import ImmersiveHero from "@/components/immersive-hero"
 import BookingExperience from "@/components/booking-experience"
@@ -8,6 +9,7 @@ import FeatureGrid from "@/components/feature-grid"
 import ModernGallery from "@/components/modern-gallery"
 import TestimonialCarousel from "@/components/testimonial-carousel"
 import ModernFooter from "@/components/modern-footer"
+import InstagramVideo from "@/components/instagram-video"
 import { motion } from "framer-motion"
 
 export default function HomePage() {
@@ -17,6 +19,9 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <ImmersiveHero />
+
+      {/* Instagram Video Section */}
+      <InstagramVideo url="https://www.instagram.com/reel/DIW4tYVJ8n2/?igsh=OHg4ZHR1Y2tsMnpm" />
 
       {/* Booking Section */}
       <section id="booking-section" className="py-24 bg-background relative">
@@ -163,4 +168,3 @@ export default function HomePage() {
     </div>
   )
 }
-
