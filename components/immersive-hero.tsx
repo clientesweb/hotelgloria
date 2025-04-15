@@ -89,12 +89,12 @@ export default function ImmersiveHero() {
             className="mb-6 inline-block"
           >
             <span className="px-4 py-1.5 rounded-full bg-primary/20 backdrop-blur-sm text-white text-sm font-medium border border-primary/30">
-              Bienvenidos
+              Hotel Gloria
             </span>
           </motion.div>
 
           <motion.h1
-            className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -103,7 +103,7 @@ export default function ImmersiveHero() {
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto"
+            className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 sm:mb-10 max-w-2xl mx-auto px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
@@ -112,21 +112,21 @@ export default function ImmersiveHero() {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row justify-center gap-4"
+            className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
           >
             <Button
               size="lg"
-              className="rounded-full px-8 py-6 text-lg font-medium bg-primary text-primary-foreground hover:bg-primary/90"
+              className="rounded-full px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg font-medium bg-primary text-primary-foreground hover:bg-primary/90"
             >
               Reservar Ahora
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="rounded-full px-8 py-6 text-lg font-medium bg-white/10 text-white hover:bg-white/20 border-white/30"
+              className="rounded-full px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg font-medium bg-white/10 text-white hover:bg-white/20 border-white/30"
             >
               Explorar Habitaciones
             </Button>
@@ -150,4 +150,3 @@ export default function ImmersiveHero() {
     </div>
   )
 }
-
