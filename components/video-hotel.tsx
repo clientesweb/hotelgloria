@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import { Play, Pause, Volume2, VolumeX, Maximize, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useMobile } from "@/hooks/use-mobile"
+// Eliminada importación de useMobile
 import Image from "next/image"
 
 interface VideoHotelProps {
@@ -21,7 +21,23 @@ export default function VideoHotel({ videoPath = "/video-hotel.mp4", title, desc
   const videoRef = useRef<HTMLVideoElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: false, amount: 0.3 })
-  const isMobile = useMobile()
+  const [isMobile, setIsMobile] = useState(false)
+
+  // Detectar si es un dispositivo móvil
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    // Verificar al inicio
+    checkMobile()
+
+    // Agregar listener para cambios de tamaño
+    window.addEventListener("resize", checkMobile)
+
+    // Limpiar listener
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
 
   // Manejar la carga del video
   useEffect(() => {
