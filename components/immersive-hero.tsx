@@ -1,28 +1,12 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useRef } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { ChevronDown } from "lucide-react"
 
-const heroImages = [
-  {
-    url: "/hero-hotel-gloria-1.jpg",
-    alt: "Fachada del Hotel Gloria",
-  },
-  {
-    url: "/hero-hotel-gloria-2.jpg",
-    alt: "Piscina climatizada del Hotel Gloria",
-  },
-  {
-    url: "/hero-hotel-gloria-3.jpg",
-    alt: "Área de juegos del Hotel Gloria",
-  },
-]
-
 export default function ImmersiveHero() {
-  const [currentImage, setCurrentImage] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollY } = useScroll()
 
@@ -30,18 +14,9 @@ export default function ImmersiveHero() {
   const y = useTransform(scrollY, [0, 1000], [0, 300])
   const opacity = useTransform(scrollY, [0, 300], [1, 0])
 
-  // Image rotation
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % heroImages.length)
-    }, 6000)
-
-    return () => clearInterval(interval)
-  }, [])
-
   // Scroll to content
   const scrollToContent = () => {
-    const contentSection = document.getElementById("content-start")
+    const contentSection = document.getElementById("video-hotel")
     if (contentSection) {
       contentSection.scrollIntoView({ behavior: "smooth" })
     }
@@ -49,27 +24,11 @@ export default function ImmersiveHero() {
 
   return (
     <div className="relative h-screen w-full overflow-hidden" ref={containerRef}>
-      {/* Background images with crossfade */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentImage}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.5 }}
-          style={{ y }}
-          className="absolute inset-0 h-full w-full"
-        >
-          <Image
-            src={heroImages[currentImage].url || "/placeholder.svg"}
-            alt={heroImages[currentImage].alt}
-            fill
-            priority
-            className="object-cover scale-110"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70" />
-        </motion.div>
-      </AnimatePresence>
+      {/* Background image with parallax */}
+      <motion.div style={{ y }} className="absolute inset-0 h-full w-full">
+        <Image src="/hero-hotel-gloria-1.jpg" alt="Hotel Gloria" fill priority className="object-cover scale-110" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70" />
+      </motion.div>
 
       {/* Hero content */}
       <motion.div
@@ -82,17 +41,6 @@ export default function ImmersiveHero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="max-w-4xl mx-auto"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="mb-6 inline-block"
-          >
-            <span className="px-4 py-1.5 rounded-full bg-primary/20 backdrop-blur-sm text-white text-sm font-medium border border-primary/30">
-              Hotel Gloria
-            </span>
-          </motion.div>
-
           <motion.h1
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
