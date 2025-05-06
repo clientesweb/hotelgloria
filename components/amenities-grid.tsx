@@ -65,11 +65,6 @@ const amenities = [
     description: "Área de parrilla para uso de huéspedes",
   },
   {
-    icon: Timer,
-    title: "Servicio de emergencia",
-    description: "Asistencia médica las 24 horas",
-  },
-  {
     icon: Camera,
     title: "Seguridad",
     description: "Vigilancia por CCTV las 24 horas",
